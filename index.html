@@ -1,0 +1,597 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+
+<head>
+    <title>Design Hotels </title>
+    <meta charset='utf-8'>
+    <meta name='Viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.6'>
+    <meta name='Title' content=' Design Hotels&#x2122; - Boutique &amp; Luxury Design Hotel Collection  '>
+    <meta name='Subject' content='clone coding'>
+    <meta name='Keywords' content='"Design Hotels'>
+    <meta name='Publisher' content='jeehyun'>
+    <meta name='Author-Date' content='20230627'>
+    <meta name="description"
+        content="Design Hotels is your resource for handpicked boutique and design-driven luxury hotels across the globe - browse, select a unique hotel and find the best rate." />
+    <meta name='Robots' content='index,follow'>
+
+
+    <link rel='shortcut icon' href='img/logo-icon-dh.png'>
+    <link rel='apple-touch-icon' href='img/logo-icon-dh.png'>
+    <link rel='stylesheet' href='css/reset.css'>
+    <link rel='stylesheet' href='css/style.css'>
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+        integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+     <script src="./js/header.js" defer></script> 
+    <script src="./js/script.js" defer></script> 
+    <script src="./data/data.js" defer></script>
+    
+   
+
+</head>
+<body>
+   <ul id="skip">
+      <li><a href="#header">헤더 바로가기</a></li>
+      <li><a href="#nav">메뉴 바로가기</a></li>
+      <li><a href="#content">내용 바로가기</a></li>
+   </ul>
+    <div id="wrap">
+        <div class="mobile-modal-menu">
+            <div>
+                <div class="mobile-modal-menu-bar">
+                    <span class="modal-logoBt-wrap">
+                        <a href="#" class="logoBt" title="logo">
+                            <img src="./img/logo-icon-dh.png" alt="logo">
+                        </a>
+                    </span>
+                    <span class="modal-appBar-wrap">
+                        <a href="#" class="appbarCloseBt" title="appbarBt">
+                            <i class="appbar-line appbar-line1"></i>
+                            <i class="appbar-line appbar-line2"></i>
+                        </a>
+                    </span>
+                </div>
+                <div class="mobile-modal-menu-list">
+                    <ul>
+                        <li><a href="#" title="APPLE MUSIC">APPLE MUSIC</a></li>
+                        <li><a href="#" title="CHART">CHART</a></li>
+                        <li><a href="#" title="ORIGINAL EXPERIENCES">ORIGINAL EXPERIENCES</a></li>
+                        <li><a href="#" title="CULTURE">CULTURE</a></li>
+                        <li><a href="#" title="GALLERY">GALLERY</a></li>
+                        <li><a href="#" title="STORE">STORE</a></li>
+                        <li><a href="#" title="ABOUT US">ABOUT US</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-modal-menu-footer">
+                    <p>
+                        Become a member <br>
+                        to enjoy the best benefits!
+                    </p>
+                    <div class="mobile-modal-menu-footer-button">
+                        <button>JOIN</button>
+                        <button>LOGIN</button>
+                        <button>SUBSCRIBE</button>
+                    </div>
+                    <div class="mobile-modal-menu-footer-sns">
+                        <span><a href="#"><i class="fab fa-instagram"></i></a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-youtube"></i></a></span>
+                        <span><a href="#"><i class="fab fa-pinterest-square"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header id="header">
+            <div>
+                <div class="header-mobile-menu-bar">
+                    <h1 class="header-logo-wrap"><a href="#" title="logo" class="logoBt"><img src="./img/KakaoTalk_20230627_172955737.png" alt=""></a></h1>
+                    <span class="header-appBar-wrap">
+                        <a href="javascript:" class="appbarBt">
+                            <i class="appbar-line appbar-line1"></i>
+                            <i class="appbar-line appbar-line2"></i>
+                            <i class="appbar-line appbar-line3"></i>
+                        </a>
+                    </span>
+                    <span class="header-search-wrap">
+                        <a href="javascript:" class="appbarBt">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </span>
+                </div>
+                <aside>
+                    <span>
+                        <a href="#" class="joinBt" title="joinBt">Join</a>
+                    </span>
+                    <span>
+                        <i>|</i>
+                    </span>
+                    <span><a href="#" class="LoginBt" title="Login">Login</a></span>
+                    <span><i>|</i></span>
+                    <span><a href="#" class="SubscribeBt" title="Subscribe">Subscribe</a></span>
+                </aside>
+                <div class="header-logoNav">
+                    <h1><a href="#" class="logoBt" title="logo"><i class="fab fa-apple"></i></a></h1>
+                    <nav id="nav">
+                        <span><a href="#" class="mainBt" title="search"><i class="fas fa-search"></i></a></span>
+                        <span><a href="#" class="mainBt" title="APPLE MUSIC">APPLE MUSIC</a></span>
+                        <span><a href="#" class="mainBt" title="CHART">CHART</a></span>
+                        <span><a href="#" class="mainBt addMainBt" title="ORIGINAL EXPERIENCES">ORIGINAL EXPERIENCES</a></span>
+                        <span><a href="#" class="mainBt" title="CULTURE">CULTURE</a></span>
+                        <span><a href="#" class="mainBt" title="GALLERY">GALLERY</a></span>
+                        <span><a href="#" class="mainBt" title="STORE">STORE</a></span>
+                    </nav>
+                </div>
+            </div>  
+        </header>
+
+        <main id="main">
+            <section id="section1">
+                <div>
+                    <div class="m-video">
+                        <video id="mainVideo" autoplay muted poster="./img/GS-blog-historical-conversions.jpg">
+                            <source src="./video/main-title-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="title-ba">
+                      <h1>Discover and share <br>
+                    your perfect <br>
+                sound</h1>
+                    </div>
+                    <div class="m-next-section">
+                        <span><a href="javascript" class="nextsection">explore stories</a></span>
+                    </div>
+                    <div class="m-icon-footer">
+                        <div class="m-icon-footer-left">
+                            <ul>
+                                <li ><spanclass="addIconbg"><a href="" class="videoIcon " title="show/hide"><i class="fas fa-video"></i></a></spanclass=></li>
+                                <li><span><a href="" class="worldIcon" title="show/hide map"><i class="fas fa-globe"></i></a></span></li>
+                            </ul>
+                        </div>
+                        <div class="m-icon-footer-center">
+                            <ul>
+                                <li><span><a href="javascriipt:" class="nextsection"><i class="fas fa-chevron-down"></i></a></span></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="m-icon-footer-right">
+                            <ul>
+                                <li><span><a href="javascriipt:" class="platpausebtn"><i class="fas fa-pause"></i></a></span></li>
+                                <li><span><a href="javascriipt:" class="mutedIcon"><i class="fas fa-volume-mute"></i></a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+  
+                </div>
+            </section>
+            <div id="section2">
+                <div class="alb-title"> <span>Todays Top Album</span></div>
+                <div class="alb-con">
+                    <ul>
+                        <li class="first-sec2 sc2">
+                            <div>
+                                
+                               <div class="left-boxa">
+                                    <div class="section2-title">
+                                        <h2>lovesick girls</h2>
+                                    </div>
+                                    <div class="section3-content">
+                                        
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque assumenda de
+                                            lectus quia hic autem explicabo, soluta blanditiis, quisquam iste mollitiaum dolores.</p>
+                                    </div>
+                               </div>
+                               <div class="abox"><img src="./img/blackpink-a.png" alt="블랙핑크 앨범"></div>
+                            </div>
+                        </li>
+                        <li class="first-sec2 sc3">
+                            <div>
+                                <div class="abox"><img src="./img/blackpink-a.png" alt="블랙핑크 앨범"></div>
+                               <div>
+                                    <div class="section2-title">
+                                        <h2>lovesick girls</h2>
+                                    </div>
+                                    <div class="section2-content">
+                                        
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque assumenda de
+                                            lectus quia hic autem explicabo, soluta blanditiis, quisquam iste mollitiaum dolores.</p>
+                                    </div>
+                               </div>
+                            </div>
+                        </li>
+                      
+                    </ul>
+                </div>
+                <div class="se2-genre">
+                    <div class="genrebox">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div class="genrebox">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div class="genrebox">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div class="genrebox">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div class="genrebox">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <section id="section3">
+                <div>
+                    <h2 class="ir_so"> Gallery</h2>
+                    <div class="tabMenu">
+                        <ul>
+                            <li><a href="javascript:" class="addTab">K-POP</a></li>
+                            <li><a href="javascript:" >SUMMER SONG</a></li>
+                            <li><a href="javascript:" >LIVE CONCERT</a></li>
+                           
+                        </ul>
+                    </div>
+                    <div class="gallery">
+                      <div>
+                        <div class="gw-lkbox">
+                           
+                            <div class="main-b-img">
+                                <h2>
+                                    WORLDWIDE <br> K-POP
+                                 </h2>
+                                <img src="./img/K-POP.jpg" alt="">
+                              
+                            </div>
+                            <div class="main-b-img">
+                                <img src="./img/SUMMERSONG.jpg" alt="">
+                                 <h2>
+                                 COOL SUMMER SONG
+                                </h2>
+                            </div>
+                            <div class="main-b-img">
+                                <img src="./img/live.jpg_large" alt="">
+                                 <h2>
+                                   LIVE CONCERT <br> VIDEO
+                                </h2>
+                            </div>
+                        </div>
+                            <ul class="gallery-wrap">
+                               <!--  <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg01.jpg" src="./video/galleryVideo01.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg02.jpg" src="./video/galleryVideo02.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg03.jpg" src="./video/galleryVideo03.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg11.jpg" src="./video/galleryVideo11.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg05.jpg" src="./video/galleryVideo05.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg06.jpg" src="./video/galleryVideo06.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg10.jpg" src="./video/galleryVideo10.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg08.jpg" src="./video/galleryVideo08.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="javascript:" class="galleryBt">
+                                            <span class="gallery-video">
+                                                <video autoplay muted loop playsinline poster="./img/videoBg09.jpg" src="./video/galleryVideo09.mp4"></video>
+                                            </span>
+                                            <span class="galleryCap"></span>
+                                            <div class="gallery-title">
+                                                <span><strong>The Ride</strong></span>
+                                                <span><b>Istoria, Santorini, Greece</b></span>
+                                                <span><i class="exporeBt">exporeBt</i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li> -->
+                            </ul>
+                      </div>
+                     
+                        <div class="loadMore">
+                            <button class="loadMoreBt">Load More</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 섹션 4 추천 플레이리스트 슬라이드 -->
+
+            <section id="section4">
+               <div class="se4-t">
+                    <div class="se-textbox">
+                        <h2>RECOMEND PLAYLIST</h2>
+                        <p>AI recommend for you <br>
+                            This is a list selected for your 3-week record.
+                        </p>
+                    </div>
+                    <div class="w-back"> </div>
+                  
+               </div>
+                <div class="plat-listwrap">
+                    <ul class="multiple-items">
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover1.jpg" alt=""></a>
+                            <div>
+                                <span>After Like</span>
+                                <p>IVE</p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover2.jpg" alt=""></a>
+                            <div>
+                                <span>ANTIFRAGILE</span>
+                                <p>LE SSERAFIM</p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover3.jfif" alt=""></a>
+                            <div>
+                                <span>MT WORLD</span>
+                                <p>ASSPA</p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover4.svg" alt=""></a>
+                            <div>
+                                <span>HYPE BOY</span>
+                                <p>NWGINS</p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover5.jpg" alt=""></a>
+                            <div>
+                                <span>Celebrity</span>
+                                <p>IU</p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" title="after like"><img src="./img/a-cover6.jpg" alt=""></a>
+                            <div>
+                                <span>PINK VENOM</span>
+                                <p>BLACK PINK</p>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <div class="background"></div>
+
+                </div>
+            </section>
+            <section id="section5">
+                <div>
+
+                </div>
+            </section>
+
+        </main>
+        <footer id="footer">
+            <div>
+                <div class="f-sitemap">
+                    <ul>
+                        <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>ABOUT</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>ABOUT US</a></li>
+                                  <li><a href='#'>SIGN UP</a></li>
+                                  <li><a href='#'>BECOME A MEMBER HOTEL</a></li>
+                                  <li><a href='#'>CAREERS</a></li>
+                                  <li><a href='#'>SUSTAINABILITY</a></li>
+                                  <li><a href='#'>INVESTOR RELATIONS</a></li>
+                                  <li><a href='#'>PARTNERS</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                         <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>EXPLORE</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>HOTELS & RESORTS</a></li>
+                                  <li><a href='#'>NEW HOTELS</a></li>
+                                  <li><a href='#'>DEALS</a></li>
+                                  <li><a href='#'>CULTURE BLOG</a></li>
+                                  <li><a href='#'>ORIGINAL EXPERIENCES</a></li>
+                                  <li><a href='#'>GALLERY</a></li>
+                                  <li><a href='#'>STORE</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                         <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>CONTACT</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>CALL US</a></li>
+                                  <li><a href='#'>EMAIL US</a></li>
+                                  <li><a href='#'>CAREERS</a></li>
+                                  <li><a href='#'>MANAGE BOOKING</a></li>
+                                  <li><a href='#'>GLOBAL OFFICES</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                         <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>TRAVEL <br> PROFESSIONALS</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>REGISTER / LOGIN</a></li>
+                                  <li><a href='#'>SPECIAL OFFERS</a></li>
+                                  <li><a href='#'>MICE HOTELS</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                         <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>PRESS</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>NEWSROOM</a></li>
+                                  <li><a href='#'>PRESS RELEASES</a></li>
+                                  <li><a href='#'>PRESS KIT</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                         <li>
+                            <h4><i></i></h4>
+                            <a href='#' class='mapNavBt'>ABOUT</a>
+                            <div class='mapSub'>
+                               <ul>
+                                  <li><a href='#'>MEMBER HOTELS</a></li>
+                                  <li><a href='#'>JOIN OUR NETWORK</a></li>
+                                  <li><a href='#'>MEMBER PORTAL</a></li>
+                               </ul>
+                            </div>
+                         </li>
+                    </ul>
+                </div>
+                <div class="f-copyright-sns">
+                    <div class="f-coptrihgt">
+                        <span>&COPY; Design Hotel 2023</span>
+                        <span><i>·</i></span>
+                        <span>&COPY; Design Hotel 2023</span>
+                        <span><i>·</i></span>
+                        <span>&COPY; Design Hotel 2023</span>
+                        <span><i>·</i></span>
+                        <span>&COPY; Design Hotel 2023</span>
+                        
+
+                    </div>
+                    <div class="f-sns">
+                        <span><a href="#"><i class="fab fa-instagram"></i></a></span>
+                        <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-youtube"></i></a></span>
+                        <span><a href="#"><i class="fab fa-pinterest-square"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
