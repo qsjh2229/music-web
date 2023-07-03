@@ -11,52 +11,61 @@ $.getJSON('./data/video.json',function(data){
     $allDate=data;
     addItem()
     $loadMoreBtn.click(addItem)
+    
 
 })
 function addItem(data){
     let element=[];
     let sliceData;
     sliceData=$allDate.slice($added,$added += $letaddItemCount)
-    $.each(sliceData,function(index,item){
-        let itemHTML=
-        ` <li class="galleryItem">
-                     <div>
-                         <a href="javascript:" class="galleryBt">
-                             <span class="gallery-video">
-                                 <video autoplay muted loop playsinline  src="${item.video}"></video>
-                             </span>
-                             <span class="galleryCap"></span>
-                             <div class="gallery-title">
-                                 <span><strong>${item.title}</strong></span>
-                                 <span><b>${item.discription}</b></span>
-                                 <span><i class="exporeBt">exporeBt</i></span>
-                             </div>
-                         </a>
-                     </div>
-             </li> `
-             element.push($(itemHTML).get(0))
-             if($added<$allDate.length){
-                $loadMoreBtn.text('Load More')
-             }else{
-                $loadMoreBtn.text('END').css( {background:'#384244'})
-             }
-                
-
-    }
-    )
-    $container.append(element)
-    console.log($(".galleryItem").length)
-    $mainImg.css("display", "none");
-    if ($(".galleryItem").length <= 6) {
-        $mainImg.eq(0).css({ "display": "block", "height": "100%" });
-    }else if ($(".galleryItem").length <= 12) {
-        $mainImg.eq(0).css({ "display": "block", "height": "50%" });
-        $mainImg.eq(1).css({ "display": "block", "height": "50%" });
-    } else if($(".galleryItem").length <= 18){
-        $mainImg.eq(0).css({ "display": "block", "height": "40%" });
-        $mainImg.eq(1).css({ "display": "block", "height": "40%" });
-        $mainImg.eq(2).css({ "display": "block", "height": "20%" });
-    }
+    $.each(sliceData, function(index, item){
+      const fileExtension = item.video.split('.').pop().toLowerCase();
+      const isMp4 = fileExtension === 'mp4';
+      const sw = isMp4 ? (
+         ` <video autoplay muted loop playsinline src="${item.video}"></video>`
+        ) : (
+         `<img src="${item.video}" />`
+        );
+       
+      let itemHTML=
+      `<li class="gallery-item">
+          <div>
+              <a href="javascript:" class="galleryBt">
+                  <span class="gallery-video">
+                      ${sw}
+                      
+                  </span>
+                  <span class="galleryCap"></span>
+                  <span class="gallery-title">
+                      <span><strong>${item.title}</strong></span>
+                      <span><b>${item.description}</b></span>
+                      <span><i class="exploreBt">Explore</i></span>
+                  </span>
+              </a>
+          </div>
+      </li>`;
+      element.push($(itemHTML).get(0));
+     
+      if($added<$allDate.length){
+          $loadMoreBtn.text('Load More')
+      }else{
+          $loadMoreBtn.css({background:'#384244', color:'#dee4e3',border:'#5e686a 1px solid'}).text('END')
+      }
+ 
+  })
+  $container.append(element);
+  console.log($(".gallery-item").length);
+  $mainImg.css("display", "none");
+  if ($(".gallery-item").length <= 6) {
+      $mainImg.eq(0).css({ "display": "block", "height": "100%" });
+  } else if ($(".gallery-item").length <= 12) {
+      $mainImg.eq(0).css({ "display": "block", "height": "50%" });
+      $mainImg.eq(1).css({ "display": "block", "height": "50%" });
+  } else if ($(".gallery-item").length <= 18) {
+      $mainImg.eq(0).css({ "display": "block", "height": "40%" });
+      $mainImg.eq(1).css({ "display": "block", "height": "40%" });
+      $mainImg.eq(2).css({ "display": "block", "height": "20%" });
+  }
 
 }
 

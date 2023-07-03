@@ -1,42 +1,42 @@
 [
     {
-        "video":"./video/galleryVideo01.mp4",
-        "title":"The Ride",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover1.jpg",
+        "title":"After like",
+        "discription":"IVE"
     },
     {
-        "video":"./video/galleryVideo02.mp4",
-        "title":"yang yang festival",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover2.jpg",
+        "title":"ANTIFRAGILE",
+        "discription":"LE SSERAFIM"
     },
     {
-        "video":"./video/galleryVideo03.mp4",
-        "title":"The itSantorini Ride",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover3.jpg",
+        "title":"C.I.T.T",
+        "discription":"문별"
     },
     {
-        "video":"./video/galleryVideo11.mp4",
-        "title":"The jejo foogd",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover4.jpg",
+        "title":"너와",
+        "discription":"ADAY"
     },
     {
-        "video":"./video/galleryVideo05.mp4",
-        "title":"The old Greece Ride",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover5.jpg",
+        "title":"Celebrity",
+        "discription":"iu"
     },
     {
-        "video":"./video/galleryVideo06.mp4",
-        "title":"The Santorini bike Ride",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"img/a-cover6.jpg",
+        "title":"Celebrity",
+        "discription":"IU"
     },
     {
-        "video":"./video/galleryVideo10.mp4",
-        "title":"The resct Ride",
-        "discription":"Istoria, Santorini, Greece"
+        "video":"./video/galleryVideo15.mp4",
+        "title":"PINK VENOM",
+        "discription":"BLACK PINK"
     },
     
     {
-        "video":"./video/galleryVideo09.mp4",
+        "video":"./video/galleryVideo14.mp4",
         "title":"fity fity si",
         "discription":"Istoria, Santorini, Greece"
     },
