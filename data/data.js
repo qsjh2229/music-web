@@ -38,7 +38,7 @@ function addItem(data){
                   <span class="galleryCap"></span>
                   <span class="gallery-title">
                       <span><strong>${item.title}</strong></span>
-                      <span><b>${item.description}</b></span>
+                      <span><b>${item.discription}</b></span>
                       <span><i class="exploreBt">Explore</i></span>
                   </span>
               </a>
@@ -79,6 +79,29 @@ function addItem(data){
     draggable: true,
     prevArrow: '<button class="prev"><i class="fas fa-angle-left"></i></button>',
     nextArrow: '<button class="next"><i class="fas fa-angle-right"></i></button>',
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+         
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 460,
+        settings: {
+          centerPadding: '-15px',
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          centerPadding: '-15px',
+          slidesToShow: 1
+        }
+      }
+     
+    ]
   });  
  /*  $('.multiple-items').slick({
     centerMode: true,

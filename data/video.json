@@ -16,8 +16,8 @@
     },
     {
         "video":"img/a-cover4.jpg",
-        "title":"너와",
-        "discription":"ADAY"
+        "title":"HEART IZE",
+        "discription":"아이즈원"
     },
     {
         "video":"img/a-cover5.jpg",
@@ -31,7 +31,7 @@
     },
     {
         "video":"img/SUMMERSONG1.jpg",
-        "title":"PINK VENOM",
+        "title":"HELLO SUMMER",
         "discription":"BLACK PINK"
     },
     
@@ -43,22 +43,22 @@
     {
         "video":"./video/galleryVideo17.mp4",
         "title":"The song rahi",
-        "discription":"Istoria, Santorini, Greece"
+        "discription":" Greece"
     },
     {
         "video":"img/SUMMERSONG4.jpg",
-        "title":"The Rchtide",
-        "discription":"Istoria, Santorini, Greece"
+        "title":"물고기",
+        "discription":"오존"
     },
     {
         "video":"img/SUMMERSONG5.jpg",
         "title":"The wook",
-        "discription":"Istoria, Santorini, Greece"
+        "discription":"김채린"
     },
     {
         "video":"img/SUMMERSONG6.jpg",
-        "title":"chae wook",
-        "discription":"Istoria, Santorini, Greece"
+        "title":"love",
+        "discription":"B2B"
     },
     {
         "video":"./video/galleryVideo02.mp4",

@@ -102,3 +102,15 @@ function videoTimeCountFn(){
  clearInterval(setID)
     }
 }
+
+
+$(window).resize(function(){
+    let boxWidth= $('.genrebox').width()
+    
+  
+    if(boxWidth<1600){
+        //1.69101
+        $('.genrebox').height(boxWidth*1.5)
+    }
+  
+  })
