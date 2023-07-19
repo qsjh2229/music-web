@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+.menu-active .inner .head + #gnb>ul>li>ul {display: inline-block;top: 0;opacity: 1;z-index: 1;transition: top .4s , opacity .4s .2s;}
+
+
+/* layout */
+#header .inner, #footer .inner {
+	width: 1280px;/* 2023-04-16 변경 */
+	margin: 0 auto;
+}
+
+#header {
+	position: relative;
+	height: 150px;
+	background: #7d2426;
+}
+
+#header .inner {
+	position: relative;
+	z-index: 1000;
+	height: 150px
+}
+
+#header .inner .head {
+	position: relative;
+	height: 100px;
+	border-bottom: 1px solid #975051
+}
+
+#header .inner .head h1 {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -27.5px 0 0 -109px;
+}
+
+#header .inner .head .pc {
+	display: inline-block
+}
+
+#header .inner .head .m {
+	display: none
+}
+
+#header .inner .head .links {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+}
+
+#header .inner .head .links a {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	width: 82px;
+	padding: 6px 0px 9px 0;/* 2023-04-16 변경 */
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;/* 2023-04-16 변경 */
+	color: #fff;
+	background: #000;
+	transform: translateY(-50%);
+}
+
+#header .inner .head .sns {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -7px
+}
+
+#header .inner .head .sns a {
+	float: left;
+	font-size: 0;
+	text-indent: -9999em
+}
+
+#header .inner .head .sns a.fb {
+	width: 24px;/* 2023-04-16 변경 */
+	height: 24px;/* 2023-04-16 변경 */
+	background: url(../../assets/images/common/ico-fb.svg) no-repeat center center;/* 2023-04-16 변경 */
+	/*background-size: 10px 20px*/
+}
+
+#header .inner .head .sns a.ins {
+	width: 24px;/* 2023-04-16 변경 */
+	height: 24px;/* 2023-04-16 변경 */
+	background: url(../../assets/images/common/ico-ins.svg) no-repeat center center;/* 2023-04-16 변경 */
+	/*background-size: 19px 19px*/
+}
+
+#header .inner .head .sns a.yt {
+	width: 24px;/* 2023-04-16 변경 */
+	height: 24px;/* 2023-04-16 변경 */
+	background: url(../../assets/images/common/ico-yt.svg) no-repeat center center;/* 2023-04-16 변경 */
+	/*background-size: 24px 17px*/
+}
+
+#header .inner .head .sns a.tw {
+    width: 24px;/* 2023-04-16 변경 */
+    height: 24px;/* 2023-04-16 변경 */
+    background: url(../../assets/images/common/ico-tw.svg) no-repeat center center;/* 2023-04-16 변경 */
+    /*background-size: 24px 17px;*/
+}
+
+#header .inner .head .sns a ~ a {
+	margin-left: 18px;/* 2023-04-16 변경 */
+}
+
+#gnb {
+	position: relative;
+	z-index: 1000
+}
+
+#gnb>ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right:0;/* 2023-04-16 추가 */
+	display:flex;/* 2023-04-16 추가 */
+}
+
+#gnb>ul:after {
+	content: "";
+	display: block;
+	clear: both
+}
+
+#gnb>ul>li {
+	flex:1;/* 2023-04-16 추가 */
+	/*float: left;
+	padding-left:8px;
+	box-sizing:border-box*/
+	text-align: center;
+}
+
+#gnb>ul>li>a {
+	display: block;
+	height: 50px;
+	line-height: 48px;/* 2023-04-16 변경 */
+	font-size: 16px;
+	font-weight: 400;/* 2023-04-16 변경 */
+	color: #fff;
+	text-align:center;/* 2023-04-16 추가 */
+	opacity: 0.8;/* 2023-04-16 변경 */
+}
+
+#gnb>ul>li>ul {
+	display: none;
+	padding-top: 25px;
+}
+
+#gnb>ul>li>ul>li {
+	line-height: 2.1;
+	text-align: left;/* 2023-04-16 추가 */
+}
+
+#gnb>ul>li>ul>li>a {
+	display: inline-block;
+	padding: 4px 0;
+	font-size: 14px;
+	font-weight: 400;/* 2023-04-16 변경 */
+	color: #fff;
+	line-height:20px;
+	opacity: 0.5;
+}
+
+/* 2023-04-25 추가 start */
+#gnb>ul>li>ul>li>ul>li>a:hover, #gnb>ul>li>ul>li>ul>li>a:focus {
+	border-bottom: 1px solid #fff
+}
+
+#gnb>ul>li.on a, #gnb>ul>li>ul>li>ul>li.on>a {
+	opacity: 1;
+}
+
+#gnb>ul>li>ul>li>ul>li {
+	margin-left: 5px;
+	text-align: left;
+}
+
+#gnb>ul>li>ul>li>ul>li>a {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	color: #fff;
+	line-height: 20px;
+	opacity: 0.5;
+	border-bottom: 1px solid transparent;
+}
+
+#gnb>ul>li>ul>li>ul>li>a:hover, #gnb>ul>li>ul>li>ul>li>a:focus {
+	border-bottom: 1px solid #fff
+}
+
+#gnb>ul>li.on a, #gnb>ul>li>ul>li>ul>li.on>a {
+	opacity: 1;
+}
+
+/* 2023-04-25 추가 end */
+
+#gnb .etc {
+	display: none
+}
+
+#header .bg {
+	position: absolute;
+	left: 0;
+	top: -480px;
+	z-index: 999;
+	width: 100%;
+	height: 520px;
+	background: #7d2426;
+	opacity: 0.8;
+}
+
+#gnb>ul>li>ul>li>a:hover, #gnb>ul>li>ul>li>a:focus {
+	border-bottom: 1px solid #fff
+}
+
+#gnb>ul>li:hover a {
+    opacity: 1;
+}
+
+#header.menu-active .bg {top:0;}
+#header .bg {
+	position: absolute;
+	left: 0;
+	top: -480px;
+	z-index: 999;
+	width: 100%;
+	height: 520px;
+	background: #7d2426;
+	opacity: 0.8;
+	transition: top .4s;
+}
+
+@media screen and (max-width:980px) {
+	
+	#header, #header .inner, #header .inner .head {
+		height: 80px;/* 2023-04-16 변경 */;
+		width: 100%;
+	}
+	#header .inner .head:after {
+		content: "";
+		display: block;
+		clear: both
+	}
+	#header .inner .head h1 {
+		width: calc(100% - 160px);/* 2023-04-16 변경 */
+		height: 100%;
+		margin: 0;
+		position: static;
+		display: inline-block;
+		text-align: center;
+	}
+	#header .inner .head h1:after {
+		content:'';
+		display:inline-block;
+		height:100%;
+		vertical-align: middle;
+	}
+	#header .inner .head h1 a {
+    display: inline-block;
+}
+	#header .inner .head h1 img {
+		width: 150px;
+		margin-left: -40px;
+	}
+	#header .inner .head .m {
+		display: inline-block
+	}
+	#header .inner .head .pc, #header .inner .head .menu-close {
+		display: none
+	}
+	#header .inner .head .menu {
+		float: left;
+		width: 80px;/* 2023-04-16 변경 */
+		height: 80px;/* 2023-04-16 변경 */
+		font-size: 0;
+		text-indent: -9999em;
+		background: url(../images/common/ico-menu.svg) 50% 50% no-repeat;/* 2023-04-16 변경 */
+		/*background-size: 14px 12px*/
+	}
+	/* #header .inner .head .search {float:right; width:60px; height:60px; font-size:0; text-indent:-9999em; background:url(/assets/images/common/ico-search.png) 50% 50% no-repeat; background-size:12px 12px} */
+	#header .inner .head .menu-close {
+		float: right;
+		width: 60px;
+		height: 60px;
+		font-size: 0;
+		text-indent: -9999em;
+		background: url(/assets/images/common/ico-close.png) 50% 50% no-repeat;
+		background-size: 12px 12px
+	}
+
+	#gnb {
+		overflow-y: auto;
+		position: fixed;
+		top: 80px;/* 2023-04-16 변경 */
+		right: 0;
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		background: #641012;/* 2023-04-16 변경 */
+		padding-bottom:40px;/* 2023-04-16 변경 */
+	}
+
+	#gnb>ul {
+		position: static;
+		margin-bottom: 15px;
+		flex-direction:column;/* 2023-04-16 추가 */
+		padding:20px;/* 2023-04-16 변경 */
+	}
+	#gnb>ul>li {
+		float: none;
+		width: 100% !important;
+		padding:0;/* 2023-04-16 변경 */
+		border-bottom: 1px solid #a46668
+	}
+	#gnb>ul>li>a {
+		position: relative;
+		height: auto;
+		line-height: 1.25;
+		text-align: left;/* 2023-04-16 추가 */
+		padding: 20px 0;/* 2023-04-16 변경 */
+		font-size: 18px;/* 2023-04-16 변경 */
+		opacity: 1;
+	}
+	
+	#gnb>ul>li>ul>li>ul>li>a {}/*  23-04-25 추가 */
+	
+	#gnb>ul>li>a:after {
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 50%;
+		width: 17px;
+		height: 17px;
+		margin-top: -8.5px;
+		background: url(../images/common/ico_menu_open.svg) no-repeat center;/* 2023-04-16 변경 */
+		/*background-size: 17px 17px*/
+	}
+	#gnb>ul>li.on>a:after {
+		background: url(../images/common/ico_menu_close.svg) no-repeat center;/* 2023-04-16 변경 */
+		/*background-size: 17px 17px*/
+	}
+	#gnb>ul>li>ul {
+		height: auto;
+		padding: 0 0 30px 0
+	}
+	#gnb>ul>li>ul>li {
+		line-height: 1.3;
+		background: #7D2325;/* 2023-04-16 변경 */
+	}
+	#gnb>ul>li>ul>li ~ li {
+		margin-top: 1px
+	}
+	#gnb>ul>li>ul>li>a {
+		display: block;
+		text-align: left;/* 2023-04-16 추가 */
+		line-height: 25px;
+		padding: 14px 20px;/* 2023-04-16 변경 */
+		font-size: 16px;
+		opacity: 1;
+	}
+	#gnb>ul>li>ul>li>ul>li>a:hover, #gnb>ul>li>ul>li>ul>li>a:focus {
+		border: none
+	}
+	/* 2023-04-25 추가 start */
+	#gnb>ul>li>ul>li>ul>li {
+		line-height: 1.3;
+		background: #7D2325;
+		border-top:1px solid #641012;
+		margin-left: 0;
+	}
+	#gnb>ul>li>ul>li ~ li {
+		margin-top: 1px;
+	}
+	#gnb>ul>li>ul>li>ul>li>a {
+		display: block;
+		text-align: left;
+		line-height: 25px;
+		padding: 14px 40px;
+		opacity: 1;
+		font-size: 14px;
+	}
+	#gnb>ul>li>ul>li>ul>li>a:hover, #gnb>ul>li>ul>li>ul>li>a:focus {
+		border: none
+	}
+	/* 2023-04-25 추가 end */
+	#gnb .etc {
+		display: flex;/* 2023-04-16 변경 */
+		flex-direction: row-reverse;/* 2023-04-16 추가 */
+		padding:0 20px;/* 2023-04-16 변경 */
+	}
+	#gnb .etc:after {
+		content: "";
+		display: block;
+		clear: both
+	}
+	#gnb .etc .eng {
+		float: left;
+		width: 80px;
+		height: 25px;
+		line-height: 25px;
+		font-weight: 700;
+		font-size: 12px;
+		color: #fff;
+		text-align: center;
+		background: #272727
+	}
+	#gnb .etc .sns {
+		/*float: right;*/
+		position: relative;
+		/*width: 50%;*/
+		height: 32px;/* 2023-04-16 변경 */
+	}
+	#gnb .etc .sns a {
+		position: relative;/* 2023-04-16 변경 */
+		top: auto;/* 2023-04-16 변경 */
+		font-size: 0;
+		text-indent: -9999em
+	}
+	#gnb .etc .sns a + a {margin-left:6px;}/* 2023-04-16 추가 */
+	#gnb .etc .sns .fb {
+		/*left: 0;*/
+		width: 32px;
+		height: 32px;
+		/*margin-top: -7.5px;*/
+		background: url(../images/common/ico-fb.svg) no-repeat;/* 2023-04-16 변경 */
+		/*background-size: 7.5px 15px*/
+	}
+	#gnb .etc .sns .ins {
+		/*left: 50%;*/
+		width: 32px;
+		height: 32px;
+		/*margin: -7.5px 0 0 -7.5px;*/
+		background: url(../images/common/ico-ins.svg) no-repeat;/* 2023-04-16 변경 */
+		/*background-size: 15px 15px*/
+	}
+	#gnb .etc .sns .tw {
+		/*left: 50%;*/
+		width: 32px;
+		height: 32px;
+		/*margin: -7.5px 0 0 -7.5px;*/
+		background: url(../images/common/ico-tw.svg) no-repeat;/* 2023-04-16 변경 */
+		/*background-size: 15px 15px*/
+	}
+	#gnb .etc .sns .yt {
+		/*right: 0;*/
+		width: 32px;
+		height: 32px;
+		/*margin-top: -6px;*/
+		background: url(../images/common/ico-yt.svg) no-repeat;/* 2023-04-16 변경 */
+		/*background-size: 17px 12px*/
+	}
+	
+	#header .inner #gnb {
+		transition: left .4s;
+	    transition-timing-function: ease-in-out;
+	}
+	/* GNB */	
+	#header .inner #gnb {
+		transition: left .4s;
+	    transition-timing-function: ease-in-out;
+	}
+
+	#header.menu-active .inner .head + #gnb>ul>li>ul {display:none;}
+	#header.menu-active .inner .head + #gnb {left:0;}
+	#header.menu-active .inner .head .menu-close {display:inline;}
+	
+	#header.menu-active .inner .head + #gnb>ul>li>ul {display:block;height:0;padding:0;overflow: hidden;transition: height .3s;}
+	#header.menu-active .inner .head + #gnb>ul>li.active>ul {display:block;padding-bottom:15px;box-sizing:border-box;}
+	#header .inner .head .links a {display:none;}
+	#header .inner .head .links a.eng {display: block;right: 15px;font-size: 12px;padding: 10px 20px;box-sizing: border-box;}
+
+	#header .inner #gnb .sign {
+	    position: relative;
+	    display: inline-block;
+	    top: 50%;
+	}
+	#header .inner #gnb .sign a {
+	    display: inline-block;
+	    width: 82px;
+	    padding: 9px 0px;
+	    text-align: center;
+	    font-size: 12px;
+	    font-weight: 700;
+	    color: #fff;
+	    background: #000;
+	}
+}

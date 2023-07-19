@@ -2,78 +2,95 @@
     {
         "video":"img/a-cover1.jpg",
         "title":"After like",
-        "discription":"IVE"
+        "discription":"IVE",
+        "category":"k-pop"
     },
     {
         "video":"img/a-cover2.jpg",
         "title":"ANTIFRAGILE",
-        "discription":"LE SSERAFIM"
+        "discription":"LE SSERAFIM",
+        "category":"k-pop"
     },
     {
         "video":"img/a-cover3.jpg",
         "title":"C.I.T.T",
-        "discription":"문별"
+        "discription":"문별",
+        "category":"k-pop"
     },
     {
         "video":"img/a-cover4.jpg",
         "title":"HEART IZE",
-        "discription":"아이즈원"
+        "discription":"아이즈원",
+        "category":"k-pop"
     },
     {
         "video":"img/a-cover5.jpg",
         "title":"Celebrity",
-        "discription":"iu"
+        "discription":"iu",
+        "category":"k-pop"
     },
     {
         "video":"img/a-cover6.jpg",
         "title":"Celebrity",
-        "discription":"IU"
+        "discription":"IU",
+        "category":"k-pop"
     },
     {
         "video":"img/SUMMERSONG1.jpg",
         "title":"HELLO SUMMER",
-        "discription":"BLACK PINK"
+        "discription":"BLACK PINK",
+        "category":"summer-song"
     },
     
     {
         "video":"img/SUMMERSONG2.jpg",
         "title":"QUEENDOM",
-        "discription":"RED VELVET"
+        "discription":"RED VELVET",
+        "category":"summer-song"
     },
     {
         "video":"./video/galleryVideo17.mp4",
         "title":"The song rahi",
-        "discription":" Greece"
+        "discription":" Greece",
+        "category":"summer-song"
     },
     {
         "video":"img/SUMMERSONG4.jpg",
         "title":"물고기",
-        "discription":"오존"
+        "discription":"오존",
+        "category":"summer-song"
     },
     {
         "video":"img/SUMMERSONG5.jpg",
         "title":"The wook",
-        "discription":"김채린"
+        "discription":"김채린",
+        "category":"summer-song"
     },
     {
         "video":"img/SUMMERSONG6.jpg",
         "title":"love",
-        "discription":"B2B"
+        "discription":"B2B",
+        "category":"summer-song"
     },
     {
         "video":"./video/galleryVideo02.mp4",
         "title":"last de all nw",
-        "discription":"Istoria, Santorini, Greece"
+        "discription":"Istoria, Santorini, Greece",
+        "category":"CONCERT"
     },
     {
         "video":"./video/galleryVideo17.mp4",
         "title":"Th enew video",
-        "discription":"Istoria, Santorini, Greece"
+        "discription":"Istoria, Santorini, Greece",
+        "category":"CONCERT"
+        
+        
     },
     {
         "video":"./video/galleryVideo18.mp4",
         "title":"xong son gwhhha",
-        "discription":"Istoria, Santorini, Greece"
+        "discription":"Istoria, Santorini, Greece",
+        "category":"CONCERT"
     }
 
 ]

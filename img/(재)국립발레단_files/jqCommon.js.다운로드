@@ -1,0 +1,488 @@
+$(document).ready(function() {
+
+	jqueryClassPack.process(jQuery);
+	jqueryClassPack.style(jQuery);
+	
+});
+
+$(window).on("load", function(){
+	jqueryClassPack.loadingAfter(jQuery);
+});
+
+/**
+ * �쒖씠荑쇰━ common
+ */
+var jqCommon = {
+	// jqCommon.openDialog(url, title, option)
+	addCssFile : function(href) {
+		if ($('link[href="' + href + '"]').length > 0) return false;
+
+		var st = $('<link>');
+		//<link href="" type="text/css" rel="stylesheet"/>
+		st.attr({"type" : "text/css","href" : href, "rel" : "stylesheet"});
+		$('head').append(st);
+	},
+
+	addScriptFile : function(src) {
+		if ($('script[src="' + src + '"]').length > 0) return false;
+
+		var sc = $('<script>');
+		sc.attr({"type" : "text/javascript","src" : src});
+		$('head').append(sc);
+	}
+};
+
+var oEditors = [];
+
+(function($) {
+
+	var jQuery = $;
+
+	jQuery.fn.reloadHtml = function() {
+		$(this).html($(this).html());
+	};
+
+	jQuery.fn.ajaxPost = function(url, opt) {
+		jqCommon.addScriptFile("/resources/js/jquery.form.js");
+		
+		var element = this;
+
+		var type = (!opt.type) ? "get" : opt.type;
+		var data = (!opt.data) ? {} : opt.data;
+		var dataType = (!opt.dataType) ? "html" : opt.dataType;
+		var success = (!opt.success) ? function(html){ $(element).html( html ); } : opt.success;
+		
+		$.ajaxSubmit({
+			type : type,
+			url : url,
+			data : data,
+			dataType : dataType, 
+			success : success
+		});
+	};
+
+	jQuery.fn.addHidden = function(name, value) {
+		var hidden = null;
+
+		if ($(this).find('input[name=' + name + ']').length > 0)
+			hidden = $(this).find('input[name=' + name + ']');
+		else
+			hidden = $('<input>').attr({
+				type : "hidden",
+				name : name
+			});
+
+		hidden.val(value);
+		hidden.appendTo($(this));
+	};
+
+	jQuery.fn.removeHidden = function(name) {
+		$(this).find('[name="' +name+ '"]').remove();
+	};
+	
+	jQuery.fn.appendHidden = function(name, value) {
+		var hidden = $('<input>').attr({
+			type : "hidden",
+			name : name
+		}).val(value);
+		$(this).append(hidden);
+	};
+
+	jQuery.fn.limitText = function(objSelector, txtSize) {
+		jQuery(objSelector).css({
+			color : "red"
+		});
+		jQuery(objSelector).text($(this).val().getByteLength);
+
+		jQuery(this).keyup(function() {
+
+			var txtLength = $(this).val().getByteLength();
+			jQuery(objSelector).text(txtLength);
+
+			if (txtLength > txtSize) {
+				jQuery(objSelector).text(txtSize - 1);
+				jQuery(this).val($(this).val().cutText(txtSize - 1));
+
+			}
+
+			limitTextAlertFlag = true;
+		});
+
+		jQuery(this).focus(function(e) {
+
+			var txtLength = $(this).val().getByteLength();
+			jQuery(objSelector).text(txtLength);
+
+			if (txtLength > txtSize) {
+				jQuery(objSelector).text(txtSize - 1);
+				jQuery(this).val($(this).val().cutText(txtSize - 1));
+			}
+
+		});
+
+		jQuery(this).blur(function(e) {
+
+			var txtLength = $(this).val().getByteLength();
+			jQuery(objSelector).text(txtLength);
+
+			if (txtLength > txtSize) {
+				jQuery(objSelector).text(txtSize - 1);
+				jQuery(this).val($(this).val().cutText(txtSize - 1));
+			}
+
+		});
+	};
+})(jQuery);
+
+
+// �쒖씠荑쇰━ �대옒�ㅽ뙥
+var jqueryClassPack = {
+	loadingAfter : function($) {
+		$('.checkNoImage').each(function(){
+			if( $(this).attr("src")=="" ) {
+				var bg = $('<div>').css({
+					backgroundColor:'#e0e0e0', 
+					height:$(this).attr("height"),
+					"line-height":$(this).attr("height")+"px"
+				});
+				bg.text("no-image");
+				$(this).before(bg);
+				$(this).hide();
+			}
+		});
+	},
+	
+	process : function($) {
+		$('.noEnter').keydown(function(e) {
+			if (e.keyCode == 13) return false;
+		});
+
+		$('.enterSubmit').keydown(function(e) {
+			if (e.keyCode == 13)
+				$(this).parents('form:first').submit();
+		});
+		
+		// �レ옄留� �낅젰�섍쾶
+		$('.onlyNumber').keydown(function(e) {
+			
+			if (e.keyCode >= 48 && e.keyCode <= 57) return true;// �レ옄��
+			if (e.keyCode >= 96 && e.keyCode <= 105) return true;// �ㅽ뙣��
+			if (e.keyCode >= 37 && e.keyCode <= 40) return true;// �대룞��
+			if ($(this).val().indexOf('-') == -1 && (e.keyCode == 109 || e.keyCode == 173)) return true;// -
+			if (e.keyCode == 8) return true;// ��
+			if (e.keyCode == 9) return true;// Tab
+			if (e.keyCode == 46) return true;// Delete
+			if (e.keyCode == 36) return true;// Home
+			if (e.keyCode == 35) return true;// End 
+			
+			e.returnValue = false;
+			return false;
+		});
+
+		// �レ옄(�뚯닔��)留� �낅젰�섍쾶
+		$('.onlyFloatNumber').keydown(function(e) {
+			if (e.keyCode >= 48 && e.keyCode <= 57) return true;// �レ옄��
+			if (e.keyCode >= 96 && e.keyCode <= 105) return true;// �ㅽ뙣�� 
+			if (e.keyCode >= 37 && e.keyCode <= 40) return true;// �대룞��
+			if ($(this).val().indexOf('.') == -1 && e.keyCode == 190) return true;// �뚯닔��
+			if ($(this).val().indexOf('-') == -1 && (e.keyCode == 109 || e.keyCode == 173)) return true;// -
+			if (e.keyCode == 8) return true;// ��
+			if (e.keyCode == 9) return true;// Tab
+			if (e.keyCode == 46) return true;// Delete
+			if (e.keyCode == 36) return true;// Home
+			if (e.keyCode == 35) return true;// End 
+			
+			e.returnValue = false;
+			return false;
+		});
+		
+		// �곷Ц�먮쭔 �낅젰�섎룄濡�
+		$('.onlyAlphabet').keydown(function(e) {
+			
+			if (e.keyCode >= 65 && e.keyCode <= 90) return true;// 臾몄옄��
+			if (e.keyCode >= 37 && e.keyCode <= 40) return true;// �대룞��
+			if (e.keyCode == 8) return true;// ��
+			if (e.keyCode == 9) return true;// Tab
+			if (e.keyCode == 36) return true;// Home
+			if (e.keyCode == 35) return true;// End 
+			if (e.keyCode == 46) return true;// Delete
+			if (e.keyCode == 229) return true;// �쒖쁺��
+			
+			e.returnValue = false;
+			return false;
+		});
+
+		// �곷Ц�먯� �レ옄留� �낅젰�섎룄濡�
+		$('.onlyAlphabetNumber').keydown(function(e) {
+			console.log(e.keyCode);
+			
+			if (e.keyCode >= 65 && e.keyCode <= 90) return true;// 臾몄옄��
+			if (e.keyCode >= 48 && e.keyCode <= 57) return true;// �レ옄��
+			if (e.keyCode >= 96 && e.keyCode <= 105) return true;// �ㅽ뙣��
+			if (e.keyCode >= 37 && e.keyCode <= 40) return true;// �대룞��
+			if (e.keyCode == 8) return true;// ��
+			if (e.keyCode == 9) return true;// Tab
+			if (e.keyCode == 36) return true;// Home
+			if (e.keyCode == 35) return true;// End 
+			if (e.keyCode == 46) return true;// Delete
+			if (e.keyCode == 229) return true;// �쒖쁺��
+						
+			e.returnValue = false;
+			
+			return false;
+		});
+		
+		// prepare �대옒�� 泥섎━
+		$('.prepare').click(function() {
+			alert($(this).text() + "(��)�� 以�鍮꾩쨷�낅땲��.");
+			return false;
+		});
+
+		// clipboard �대옒�� 泥섎━
+		$('.clipboard').click(function() {
+			var text = $(this).attr("href");
+			if (!text || text == "#" || text.indexOf("javascript") > -1)
+				text = location.href;
+
+			DevCommon.copyClipboard(text);
+
+			return false;
+		});
+
+		$('.btnBack').click(function() {
+			if (!confirm("�댁쟾 �섏씠吏�濡� �뚯븘媛��쒓쿋�듬땲源�?")) return false;
+
+			history.back(-1);
+			return false;
+		});
+
+		$('.btnReset').click(function() {
+			if (!confirm("�낅젰�섍린 �� �곹깭濡� �섎룎由ъ떆寃좎뒿�덇퉴?")) return false;
+
+			var form = $(this).parents('form').eq(0);
+			$('<input>').attr({
+				type : "reset"
+			}).appendTo(form).click().remove();
+			
+			return false;
+		});
+
+		$('.btnSubmit').click(function() {
+			$(this).parents('form').eq(0).submit();
+			return false;
+		});
+
+		$(document).on("click", '.btnSubmit', function() {
+			$(this).parents('form').eq(0).submit();
+			return false;
+		});
+
+		$('.checkAll').click(function() {
+			var isChecked = $(this).is(":checked");
+			var target = $(this).attr("data-target");
+			
+			$('[type=checkbox][name="' +target+ '"]').prop("checked", isChecked);
+		});
+
+		$('.windowPopup').click(function(e) {
+			
+			var width = $(this).attr("data-width");
+			var height = $(this).attr("data-height");
+			var scroll = ($(this).attr("data-scroll"))?$(this).attr("data-scroll"):"0";
+			var attrName = $(this).prop("tagName") == "A" ? "href" : "data-url";
+			
+			var param = ($(this).attr(attrName).indexOf("?")==-1)?"?":"&";
+				param += "width="+width+"&height="+height;
+			
+			var pop = window.open($(this).attr(attrName)+param, "popup", "width=" + width + ",height=" + height + ",left=" + (e.screenX - 100) + ",top=" + (e.screenY - 200) + ", scrollbars=" + scroll);
+			pop.focus();
+
+			return false;
+		});
+
+		$(document).on('click', 'a[href="#"], a[href=""]', function() {
+			return false;
+		});
+
+		$('.btnWindowClose').click(function() { window.close(); });
+
+		$('.selectInput').change(function() {
+			var target = $(this).attr("data-target")
+
+			if (!$(this).val()) {
+				$('[name=' + target + ']').val("");
+				$('[name=' + target + ']').attr("readonly", false);
+			} else if ($(this).val() == "direct") {
+				$('[name=' + target + ']').val("");
+				$('[name=' + target + ']').attr("readonly", false);
+			} else {
+				$('[name=' + target + ']').val($(this).val());
+				$('[name=' + target + ']').attr("readonly", true);
+			}
+		});
+
+		$('.selectInputText').change(function() {
+			var target = $(this).attr("data-target")
+
+			if (!$(this).val()) {
+				$('[name=' + target + ']').val("");
+				$('[name=' + target + ']').attr("readonly", false);
+			} else if ($(this).val() == "direct") {
+				$('[name=' + target + ']').val("");
+				$('[name=' + target + ']').attr("readonly", false);
+			} else {
+				$('[name=' + target + ']').val($(this).find(":selected").text());
+				$('[name=' + target + ']').attr("readonly", true);
+			}
+		});
+		
+		$(document).on("click", '.openImage', function(e) {
+			var img = new Image();
+			if( $(this).attr("src") ) {
+				img.src = $(this).attr("src");
+			} else if( $(this).attr("data-url") ) {
+				img.src = $(this).attr("data-url");
+			} else {
+				img.src = $(this).attr("href");
+			}
+			
+			$(img).on("load", function() {
+				var width = img.width;
+				try {
+					$('.imageDialog').remove();
+				} catch(e) {}
+
+				var imgAnchor = $('<a>', {href:"javascript:;"});
+				imgAnchor.append(img);
+				imgAnchor.blur();
+				layer = $('<div>').attr("class", "imageDialog").appendTo('body');	
+				
+				layer.attr({ title : "�대�吏� 蹂닿린" });
+				layer.css({ padding : 2 }); 
+				layer.dialog({ width : width+15 , position : { at : "center center" }});
+				layer.append(imgAnchor);
+
+				imgAnchor.click(function(){
+					layer.remove();
+				});
+			});
+			
+			return false;
+		});
+
+		$('.imageOnOver').mouseover(function() {
+			if ($(this).attr("src").indexOf("_on") > -1) return false;
+
+			var src = $(this).attr("src");
+			var fileName = src.substring(0, src.lastIndexOf("."));
+			var ext = src.substring(src.lastIndexOf(".") + 1, src.length);
+
+			$(this).css({ opacity : 0.5 });
+			$(this).attr("src", fileName + "_on." + ext);
+			$(this).animate({ opacity : 1 }, 255);
+
+		});
+
+		$('.imageOnOver').mouseout(function() {
+			if ($(this).attr("src").indexOf("_on") == -1) return false;
+
+			var src = $(this).attr("src");
+
+			$(this).css({ opacity : 0.5 });
+			$(this).attr("src", src.replace("_on", ""));
+			$(this).animate({ opacity : 1 }, 255);
+		});
+
+		$('select[data-default]').each(function() {
+			var value = $(this).attr("data-default");
+			if(value) { $(this).val(value); }
+		});
+
+		$('input[type=radio][data-default]').each(function() {
+			var name = $(this).attr("name");
+			var value = $(this).attr("data-default");
+			
+			if($(this).val()==value) { $(this).prop("checked", "checked"); }
+		});
+
+		$('input[type=checkbox][data-default]').each(function() {
+			try {
+				var value = $(this).attr("data-default").split(",");
+				for(i in value) {
+					if($(this).val()==value[i]) { 
+						$(this).prop("checked", "checked"); 
+					}	
+				}
+			}catch(e){}
+		});
+
+		$('button[data-href]').click(function(){
+			location.href = $(this).attr('data-href');
+		});
+		
+		$('button[data-submit]').click(function(){
+			var target = $(this).attr("data-submit");
+			eval("document."+target+".submit();");
+		});
+		
+		$('.btnShow').click(function(){
+			var target = $(this).attr("data-target");
+			$(target).show();
+		});
+
+		$('.btnHide').click(function(){
+			var target = $(this).attr("data-target");
+			$(target).hide();
+		});
+		
+		$(document).on("click", '[data-msg][data-url]', function(){
+			var msg = $(this).attr("data-msg");
+			var url = $(this).attr("data-url");
+			
+			if(!confirm(msg)) {
+				return false;
+			}
+			
+			location.href = url;
+			return false;
+		});
+
+		$('.datePicker').each(function() {
+			var korMonth = ['1��', '2��', '3��', '4��', '5��', '6��', '7��', '8��', '9��', '10��', '11��', '12��'];
+			var korDay = ['��', '��', '��', '��', '紐�', '湲�', '��'];
+			// ===== datepicker =====
+			var datepickerOption = {
+				changeYear : true,
+				changeMonth : true,
+				showMonthAfterYear : true,
+				dateFormat : "yy-mm-dd",
+				monthNamesShort : korMonth,
+				dayNamesMin : korDay,
+				yearRange : "1900:" + new Date().getFullYear()
+				// minDate : "-30y",
+				// maxDate: "+0d",
+				//showButtonPanel: true,
+				//closeText : "Close"
+				//showOn: 'both',
+				//buttonImageOnly: true,
+				//buttonImage: "/resources/img/admin/btn_calendar.gif"
+			};
+
+			try {
+				$(this).datepicker(datepickerOption);
+				$(this).attr("readonly", true);
+				$(this).css("cursor", "pointer");
+			} catch(e) {
+				alert(e);
+			}
+			// ===== datepicker =====
+		});
+	},
+
+	style : function($) {
+		$('.openImage').css({"cursor" : "pointer"});
+		$('button:not([type])').attr("type", "button");
+		$('.opa0').css({ opacity : 0 });
+		$('.opa1').css({ opacity : 1 });
+	}
+};

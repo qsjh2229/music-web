@@ -1,0 +1,824 @@
+String.prototype.replaceAll = function(fromStr, toStr) {
+	return this.split(fromStr).join(toStr);
+};
+
+String.prototype.getByteLength = function() {
+	var byte = 0;
+	var text = this;
+
+	for (var i = 0; i < text.length; i++) {
+		var str = text.substring(i, i + 1);
+		if (escape(str).length > 3) {
+			byte += 2;
+		} else {
+			byte++;
+		}
+	}
+	return byte;
+};
+
+String.prototype.cutString = function(byteSize) {
+	var rtnString = "";
+	var size = 0;
+
+	if (this.getByteLength() < byteSize) {
+		return this.toString();
+	}
+
+	for (var i = 0; size < byteSize; i++) {
+
+		nowText = this.substring(i, i + 1);
+		size += nowText.getByteLength();
+		rtnString += nowText;
+		if (size >= byteSize)
+			rtnString += "...";
+	}
+
+	return rtnString;
+};
+
+String.prototype.cutText = function(byteSize) {
+	var rtnString = "";
+	var nowText = "";
+	var text = this;
+
+	if (this.getByteLength() < byteSize) {
+		return text;
+	}
+
+	var i = 0;
+	while (rtnString.getByteLength() < byteSize) {
+		nowText = text.substring(i, i + 1);
+		rtnString += nowText;
+		i++;
+	}
+	return rtnString;
+};
+
+// common �⑥닔
+var DevCommon = {
+
+	goUrl : function(url) {
+		location.href = url;
+	},
+
+	joinValue : function(form, fieldName, joinChar) {
+		if (!joinChar)
+			joinChar = "";
+		var value = "";
+		$(form).find('[name^=' + fieldName + ']:enabled').each(function(i) {
+			var thisFieldNameLast = $(this).attr("name").replace(fieldName, "");
+
+			// 문자면 false 반환
+			if (isNaN(thisFieldNameLast) || !thisFieldNameLast) {
+				return false;
+			}
+
+			if (i == 0)
+				value = $(this).val();
+			else {
+				if (joinChar)
+					value += joinChar;
+				value += $(this).val();
+			}
+		});
+
+		if ($(form).find('[name=' + fieldName + ']').length > 0)
+			$(form).find('[name=' + fieldName + ']').remove();
+
+		// joinChar로만 이루어진 데이터는 무효.
+		if (joinChar != "" && value.indexOf(joinChar) == 0)
+			return false;
+
+		return value;
+	},
+
+	// 클립보드 복사
+	copyClipboard : function(text) {
+		var flag = null;
+
+		try {
+			flag = window.clipboardData.setData("Text", text);
+			if (flag)
+				alert("복사되었습니다.");
+
+		} catch(e) {
+			try {
+				if(typeof(Components.classes['@mozilla.org/widget/clipboard;1'])=='undefined') {
+					prompt("현재 브라우저는 클립보드 지원을 하지 않습니다.\n수동으로 복사해주세요.\n", text);
+					return false;
+				}
+			} catch(e) {
+				prompt("현재 브라우저는 클립보드 지원을 하지 않습니다.\n수동으로 복사해주세요.\n", text);
+				return false;
+			}
+
+			var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+
+			if (!clip)
+				return;
+
+			var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+
+			if (!trans)
+				return;
+
+			trans.addDataFlavor('text/unicode');
+
+			var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+			var copytext = text;
+			str.data = copytext;
+			trans.setTransferData("text/unicode", str, copytext.length * 2);
+			var clipid = Components.interfaces.nsIClipboard;
+			if (!clip)
+				return false;
+			clip.setData(trans, null, clipid.kGlobalClipboard);
+
+			if (clip)
+				alert("복사되었습니다.");
+
+		}
+
+		return flag;
+	},
+
+	sleep : function(ms) {
+		var now = new Date();
+		var exitTime = now.getTime() + ms;
+
+		while (true) {
+			now = new Date();
+			if (now.getTime() >= exitTime)
+				return;
+		}
+	},
+
+	createIframe : function(name) {
+		var iframe = document.createElement("iframe");
+		iframe.setAttribute("name", name);
+		iframe.setAttribute("style", "display:none;");
+        return iframe;
+    },
+    
+    autoSizeIframe : function(obj) {
+    	// 프레임 높이 직접 조절
+    	var height = document.body.scrollHeight;
+    	
+    	if(obj) {
+    		if( $(obj).height() > 0 ) {
+    			height = $(obj).height();
+    		}
+    	}
+    	
+    	window.frameElement.style.height = height + "px";
+    	
+    	// 프레임 변경된 높이에 따라 본문 사이즈도 변경
+    	$(parent.document).ready(function(){
+    		//parent.document.body.style.height = (parent.document.body.scrollHeight-50) + "px";
+    	});
+    	
+    },
+    
+    createForm : function(name, method) {
+        if($('form[name=' +name+ ']').length > 0)
+            return $('form[name=' +name+ ']').eq(0);
+        
+        method = (!method)?"post":method;
+        var form = $('<form name="' + name + '" method="' +method+ '">');
+        	form.appendTo('body');
+        	
+        return form;
+    },
+
+	getCheckedValues : function(obj) {
+		var values = "";
+		obj.each(function(){
+			if( $(this).is(":checked") ) {
+				values += $(this).val() + ",";
+			}
+		});
+
+		return (values)?values.substring(0, values.length-1):"";
+	},
+
+	autoSizeWindow : function(obj) {
+		var width = $(obj).width() + (window.outerWidth-window.innerWidth);
+		var height = $(obj).height() + (window.outerHeight-window.innerHeight);
+
+		window.resizeTo(width, height);
+	},
+	loading : function(doOpen) {
+		if ( $('.loadingLayer').length == 0 ) {
+
+			var loadingLayer = $('<div>').css({
+				position:"fixed",
+				top:0,
+				left:0,
+				display:"none",
+				"background-color":"#000",
+				"z-index":9998,
+				"width":"100%",
+				"height": ($(window).height()+100) + "px"
+			}).addClass("loadingLayer");
+			
+			$('body').append(loadingLayer);
+			loadingLayer.css("opacity", "0.7");
+			
+			var imageWrapper = $('<p>').css({
+				position:"fixed",
+				top:"50%",
+				left:"50%",
+				display:"none",
+				"z-index":9999
+			}).addClass("imageWrapper");
+			var loadingImage = $('<img>', {src:"/assets/images/common/loading.gif"}).css({
+				"margin-top":"-50%",
+				"margin-left":"-50%"
+			}).addClass("loadingImage");
+
+			imageWrapper.append(loadingImage)
+			$('body').append(imageWrapper);
+		}
+
+		if(doOpen) {
+			$('.loadingLayer, .imageWrapper').show();
+		} else {
+			$('.loadingLayer, .imageWrapper').hide();
+		}
+	},
+	
+	isHtml5 : function() {
+		return !(typeof(document.ondragover)!='object');
+	},
+	
+	isMobile : {
+	    Android: function() {
+	        return navigator.userAgent.match(/Android/i);
+	    },
+	    BlackBerry: function() {
+	        return navigator.userAgent.match(/BlackBerry/i);
+	    },
+	    iOS: function() {
+	        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	    },
+	    Opera: function() {
+	        return navigator.userAgent.match(/Opera Mini/i);
+	    },
+	    Windows: function() {
+	        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+	    },
+	    any: function() {
+	        return !!(this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
+	    }
+	}
+};
+
+var CookieUtil = {
+	// ex: cookieUtil.set("userID", "test", 1) [1�쒓컙 �숈븞 userID�� test瑜� ����]
+	set : function(cookieName, cookieValue, hour) {
+
+		var date = new Date();
+		var expireTime = 0;
+		
+		if (!hour) {
+			expireTime = 60 * 60 * 1000;
+		} else if(hour==-1){
+			expireTime = -1;
+		} else {
+			expireTime = hour * 60 * 60 * 1000;
+		}
+		
+		date.setTime(date.getTime() + expireTime);
+
+		var saveCookieValue = cookieName + "=" + escape(cookieValue) + ";path=/;domain=" + document.domain + ";expires=" + date.toUTCString() + ";";
+		document.cookie = saveCookieValue;
+
+	},
+
+	get : function(cookieName) {
+		var ck = document.cookie;
+ 
+		if (ck.indexOf(cookieName + "=") > -1)
+			ck = ck.substring( ck.indexOf(cookieName+"=") , ck.length ).split("=")[1];
+		else
+			ck = "";
+
+		if (ck != null && ck.indexOf(";") > -1)
+			return unescape(ck.substring(0, ck.indexOf(";")));
+		else
+			return unescape(ck);
+	},
+
+	remove : function(cookieName) {
+		CookieUtil.set(cookieName, "", -1);
+	}
+};
+
+var DateUtil = {
+	getYMD : function(date) {
+		if(!date) {
+			date = new Date(); 
+		}
+		
+		var y = date.getFullYear();
+		var m = (date.getMonth()>9)?date.getMonth()+1:"0" + (date.getMonth()+1);
+		var d = (date.getDate()>9)?date.getDate():"0" + date.getDate();
+		
+		return y + "-" + m + "-" + d;
+	},
+	
+	parseDate : function(yyyyMMdd) {
+		if(yyyyMMdd.length < 10 || yyyyMMdd.split('-').length < 2) {
+			return null;
+		}
+		var arrDate = yyyyMMdd.split('-');
+		var y = arrDate[0];
+		var m = arrDate[1]-1;
+		var d = arrDate[2];
+		
+		var rtnDate = new Date();
+		rtnDate.setFullYear(y, m, d);
+		rtnDate.setHours(0, 0, 0, 0);
+		
+		return rtnDate;
+	},
+
+	setDateInit : function(startYear, yearObj, monthObj, dateObj) {
+		if( $(yearObj).length == 0 ) return false;
+		if( $(monthObj).length == 0 ) return false;
+		if( $(dateObj).length == 0 ) return false;
+		
+		for (var y = startYear; y <= new Date().getFullYear() + 10; y++) {
+			var opt = $("<option>").text(y).val(y);
+
+			try{
+				if ( $(yearObj).attr("data-date") == y)
+					opt.attr("selected", true);
+			} catch(e) {}
+			
+			$(yearObj).append(opt);
+		}
+
+		for (var m = 1; m <= 12; m++) {
+			var month = (m < 10) ? "0" + m : m;
+			var opt = $("<option>").text(m).val(month);
+			
+			try{
+				if ( $(monthObj).attr("data-date") == month)
+					opt.attr("selected", true);
+			} catch(e) {}
+			$(monthObj).append(opt);
+		}
+
+		$(yearObj).change(function() {
+			$(monthObj).val("");
+			$(dateObj).val("");
+		});
+
+		DateUtil.setDateObj(yearObj, monthObj, dateObj);
+		$(monthObj).change(function() {
+			if( !$(yearObj).val() ) {
+				alert("�꾨룄瑜� �좏깮�댁＜�몄슂");
+				return false;
+			}
+			DateUtil.setDateObj(yearObj, monthObj, dateObj);
+		});
+
+		try{
+			$(dateObj).find('[value=' + $(dateObj).attr("data-date") + ']').attr("selected", true);
+		} catch(e) {}
+
+	},
+	setYearObj : function(startYear, yearObj) {
+		var year = new Date().getFullYear();
+		var selectedYear = $(yearObj).text();
+		$(yearObj).html('<option value="">�좏깮</option>');
+
+		for (var y = startYear; y <= year; y++) {
+			var option = $('<option>').attr({
+				value : y
+			}).html(y);
+			if (selectedYear == y) {
+				option.attr("selected", true);
+			}
+			$(yearObj).append(option);
+		}
+		$(yearObj).parent().reloadHtml();
+	},
+	setMonthObj : function(monthObj) {
+		var selectedMonth = $(monthObj).text();
+		$(monthObj).html('<option value="">�좏깮</option>');
+
+		for (var m = 1; m <= 12; m++) {
+			var option = $('<option>').attr({
+				value : m
+			}).html(m);
+			if (selectedMonth == m) {
+				option.attr("selected", true);
+			}
+			$(monthObj).append(option);
+		}
+
+		$(monthObj).parent().reloadHtml();
+	},
+
+	setDateObj : function(yearObj, monthObj, dateObj) {
+		var _vYear = $(yearObj).val();
+		var _vMonth = $(monthObj).val();
+
+		_arrLastDay = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+		if (_vYear == "" || _vMonth == "")
+			return;
+
+		_vYear = parseInt(_vYear);
+
+		if (_vMonth.substring(0, 1) == "0")
+			_vMonth = _vMonth.substring(1, 2);
+
+		_vMonth = parseInt(_vMonth);
+
+		if ((_vYear % 400 == 0) || (_vYear % 4 == 0 && _vYear % 100 != 0))
+			_arrLastDay[1] = 29;
+
+		$(dateObj).html("");
+		$(dateObj).append("<option value=''>�좏깮</option>");
+
+		for (var i = 1; i <= _arrLastDay[_vMonth - 1]; i++) {
+			var _vDate = i;
+			var _vDateValue = i;
+
+			if (i < 10)
+				_vDateValue = "0" + _vDateValue;
+
+			$(dateObj).append("<option value='" + _vDateValue + "'>" + _vDate + "</option>");
+
+		}
+	},
+
+	timeDiff : function(start, end) {
+		if(start==null || end==null) {
+			return {date:0,hour:0,minute:0,second:0};
+		}
+		
+		var remain = new Date();
+		var remainTime = end.getTime() - start.getTime();
+		var isAfter = (remainTime < 0) ? true : false;
+		var isBefore = (remainTime > 0) ? true : false;
+
+		if (remainTime < 0) {
+			//remainTime = start.getTime() - end.getTime();
+			return {date:0,hour:0,minute:0,second:0};
+		}
+
+		remain.setTime(remainTime);
+		remainTime = remainTime / 1000;
+		
+		var remainDate = Math.floor(remainTime / 60 / 60 / 24);
+			remainTime = remainTime - (remainDate * 60 * 60 * 24);
+			
+		var remainHour = Math.floor((remainTime - remainDate) / 60 / 60) ;
+			remainTime = remainTime - (remainHour * 60 * 60);
+		
+		var remainMinute = Math.floor(remainTime / 60) ;
+			remainTime = remainTime - (remainMinute*60);
+		
+		var remainSecond = Math.floor(remainTime);
+		
+		var rtnFunc = {
+			isAfter : isAfter , 
+			isBefore : isBefore,
+			date : (remainDate<10)?"0" + remainDate:remainDate ,
+			hour : (remainHour<10)?"0" + remainHour:remainHour,
+			minute : (remainMinute<10)?"0" + remainMinute:remainMinute,
+			second : (remainSecond<10)?"0" + remainSecond:remainSecond
+		};
+		
+		return rtnFunc;
+
+	},
+	
+	calcDate : function(opt) {
+		var date = new Date(opt.date);
+		var y = date.getFullYear();
+		var M = date.getMonth();
+		var d = date.getDate();
+		
+		switch(opt.calc.type) {
+			case 'y':
+				date.setFullYear(y + opt.calc.num);
+				break;
+			case 'M':
+				date.setMonth(M + opt.calc.num);
+				break;
+			case 'd':
+				date.setDate(d + opt.calc.num);
+				break;
+			case 'w':
+				date.setDate( d + (opt.calc.num*7));
+				break;
+		}
+		
+		return date;
+	}
+};
+
+var NumberUtil = {
+	format : function(num) {
+
+		var isminus = false;
+
+		if (num < 0)
+			isminus = true;
+
+		num = Math.abs(num);
+
+		var numString = num.toString();
+		var returnNumber = "";
+		var cnt = 0;
+		for (var i = numString.length - 1; i >= 0; i--) {
+			cnt++;
+			returnNumber = numString.substring(i, i + 1) + returnNumber;
+
+			if (cnt % 3 == 0 && i > 0) {
+				returnNumber = "," + returnNumber;
+			}
+
+		}
+
+		if (isminus)
+			returnNumber = "-" + returnNumber;
+
+		return returnNumber;
+	},
+
+	random : function(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+};
+
+var RequestUtil = {
+    getUri : function() {
+        var uri = location.href.replace("http://"+document.domain,"");
+        return uri;
+    },
+    
+	getUriSegment : function(depth) {
+		var uri = location.href.replace("http://"+document.domain,"");
+		var returnValue;
+
+		try {
+			returnValue = uri.split("/")[depth];
+		} catch(e) {
+			returnValue = null;
+		}
+
+		return returnValue;
+	},
+
+	getQueryString : function() {
+		var queryString = location.href.split("?")[1];
+		if (!queryString) {
+			return null;
+		}
+
+		return queryString;
+	},
+
+	getParam : function(key) {
+		var queryString = location.href.split("?")[1];
+		if (!queryString) {
+			return null;
+		}
+
+		var arrParam = queryString.split("&");
+		var paramData = {};
+
+		for (i in arrParam) {
+			var k = arrParam[i].split("=")[0];
+			var v = arrParam[i].split("=")[1];
+			paramData[k] = v;
+		}
+
+		if (key)
+			return paramData[key];
+		else
+			return paramData;
+	}
+};
+
+var StringUtil = {
+
+	getRandomString : function(len) {
+		var randomString = "";
+
+		for (var i = 0; i < len; i++) {
+			var rnd = NumberUtil.random(1, 2);
+
+			if (rnd % 2 == 0)
+				randomString += StringUtil.getRandomUpper(1);
+			else
+				randomString += StringUtil.getRandomLower(1);
+		}
+
+		return randomString;
+	},
+
+	getRandomLower : function(len) {
+		var randomString = "";
+
+		for (var i = 0; i < len; i++) {
+			var lower = NumberUtil.random(97, 122);
+			randomString += String.fromCharCode(lower);
+		}
+
+		return randomString;
+	},
+
+	getRandomUpper : function(len) {
+		var randomString = "";
+
+		for (var i = 0; i < len; i++) {
+			var lower = NumberUtil.random(65, 90);
+			randomString += String.fromCharCode(lower);
+		}
+
+		return randomString;
+	},
+
+	ifNull : function(string, ifNullString) {
+		if (!string)
+			return ifNullString;
+
+		return string;
+	}
+};
+
+var Base64 = {
+
+	// private property
+	_keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+	// public method for encoding
+	encode : function (input) {
+		var output = "";
+		var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+		var i = 0;
+
+		input = Base64._utf8_encode(input);
+
+		while (i < input.length) {
+
+			chr1 = input.charCodeAt(i++);
+			chr2 = input.charCodeAt(i++);
+			chr3 = input.charCodeAt(i++);
+
+			enc1 = chr1 >> 2;
+			enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+			enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+			enc4 = chr3 & 63;
+
+			if (isNaN(chr2)) {
+				enc3 = enc4 = 64;
+			} else if (isNaN(chr3)) {
+				enc4 = 64;
+			}
+
+			output = output +
+			this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+			this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+		}
+
+		return output;
+	},
+
+	// public method for decoding
+	decode : function (input) {
+		var output = "";
+		var chr1, chr2, chr3;
+		var enc1, enc2, enc3, enc4;
+		var i = 0;
+
+		input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+		while (i < input.length) {
+
+			enc1 = this._keyStr.indexOf(input.charAt(i++));
+			enc2 = this._keyStr.indexOf(input.charAt(i++));
+			enc3 = this._keyStr.indexOf(input.charAt(i++));
+			enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+			chr1 = (enc1 << 2) | (enc2 >> 4);
+			chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+			chr3 = ((enc3 & 3) << 6) | enc4;
+
+			output = output + String.fromCharCode(chr1);
+
+			if (enc3 != 64) {
+				output = output + String.fromCharCode(chr2);
+			}
+			if (enc4 != 64) {
+				output = output + String.fromCharCode(chr3);
+			}
+
+		}
+
+		output = Base64._utf8_decode(output);
+
+		return output;
+
+	},
+
+	// private method for UTF-8 encoding
+	_utf8_encode : function (string) {
+		string = string.replace(/\r\n/g,"\n");
+		var utftext = "";
+
+		for (var n = 0; n < string.length; n++) {
+
+			var c = string.charCodeAt(n);
+
+			if (c < 128) {
+				utftext += String.fromCharCode(c);
+			}
+			else if((c > 127) && (c < 2048)) {
+				utftext += String.fromCharCode((c >> 6) | 192);
+				utftext += String.fromCharCode((c & 63) | 128);
+			}
+			else {
+				utftext += String.fromCharCode((c >> 12) | 224);
+				utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+				utftext += String.fromCharCode((c & 63) | 128);
+			}
+
+		}
+
+		return utftext;
+	},
+
+	// private method for UTF-8 decoding
+	_utf8_decode : function (utftext) {
+		var string = "";
+		var i = 0;
+		var c = c1 = c2 = 0;
+
+		while ( i < utftext.length ) {
+
+			c = utftext.charCodeAt(i);
+
+			if (c < 128) {
+				string += String.fromCharCode(c);
+				i++;
+			}
+			else if((c > 191) && (c < 224)) {
+				c2 = utftext.charCodeAt(i+1);
+				string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+				i += 2;
+			}
+			else {
+				c2 = utftext.charCodeAt(i+1);
+				c3 = utftext.charCodeAt(i+2);
+				string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+				i += 3;
+			}
+
+		}
+
+		return string;
+	}
+
+};
+
+var FileUtil = {
+	previewImage : function(obj, id) {
+		try {
+			var target = document.getElementById(id);
+			var reader = new FileReader();
+			var file = obj.files[0];
+			reader.readAsDataURL(file);
+			
+			reader.onloadend = function() {
+				target.setAttribute("src", reader.result);
+			};
+		} catch(e) {
+			alert("�� 釉뚮씪�곗��� HTML5瑜� 吏��먰븯吏� �딆뒿�덈떎.");
+		}
+	},
+
+	previewText : function(obj, id) {
+		try {
+			var target = document.getElementById(id);
+			var reader = new FileReader();
+			var file = obj.files[0];
+			reader.readAsDataURL(file);
+			
+			reader.onloadend = function() {
+				target.value = reader.result;
+			};
+		} catch(e) {
+			alert("�� 釉뚮씪�곗��� HTML5瑜� 吏��먰븯吏� �딆뒿�덈떎.");
+		}
+		
+	}
+};

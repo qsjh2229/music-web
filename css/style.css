@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap");
 body {
-  background: #222;
   color: #fff;
   font-family: "San Francisco";
+  background: #222;
 }
 
 a {
@@ -499,6 +499,15 @@ a {
   width: 100%;
 }
 
+#section4 > div > .gallery > div > .gw-lkbox > .main-b-img {
+  display: none;
+}
+
+#section4 > div > .gallery > div > .gw-lkbox > .main-b-img.on {
+  display: block;
+  height: 100%;
+}
+
 #section4 {
   width: 100%;
 }
@@ -506,29 +515,25 @@ a {
   height: 100%;
 }
 #section4 > div .tabMenu {
+  background: #000;
   height: 100px;
-  background: rgba(32, 2, 30, 0.5607843137);
+  background: #ffffff;
 }
-#section4 > div .tabMenu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
+#section4 > div .tabMenu form {
+  color: #000;
+  width: 100%;
+  text-align: center;
 }
-#section4 > div .tabMenu ul li {
-  line-height: 100px;
-}
-#section4 > div .tabMenu ul li a {
-  display: block;
-  padding: 0px 18px;
-  color: #aab6b1;
+#section4 > div .tabMenu form span {
   font-size: 20px;
+  font-weight: bold;
 }
-#section4 > div .tabMenu ul li a.addTab {
-  background: rgba(255, 226, 250, 0.2666666667);
-  border-radius: 10px;
-  color: #fff;
-  height: 10%;
+#section4 > div .tabMenu form span input[type=radio] {
+  opacity: 0;
+  padding: 20px 30px;
+}
+#section4 > div .tabMenu form span label {
+  cursor: pointer;
 }
 #section4 > div .gallery {
   height: 100%;
@@ -777,6 +782,7 @@ a {
 }
 
 #footer {
+  margin-top: 150px;
   width: 100%;
   padding: 50px 0;
   background: rgba(63, 9, 58, 0.4039215686);

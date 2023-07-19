@@ -306,34 +306,42 @@
             <section id="section4">
                 <div>
                     <h2 class="ir_so"> Gallery</h2>
-                    <div class="tabMenu">
-                        <ul>
-                            <li><a href="javascript:" class="addTab">K-POP</a></li>
-                            <li><a href="javascript:" >SUMMER SONG</a></li>
-                            <li><a href="javascript:" >LIVE CONCERT</a></li>
-                           
-                        </ul>
+                    <div class="tabMenu  conatiner">
+                        <form class="filter-form" id="gallery-filter">
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-k-pop" value="k-pop" checked>
+                                <label for="filter-k-pop">K-POP</label>
+                            </span>
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-summer-song" value="summer-song" >
+                                <label for="filter-summer-song">SUMMER SONG</label>
+                            </span>
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-video" value="CONCERT" >
+                                <label for="filter-video">CONCERT</label>
+                            </span>
+                        </form>
                     </div>
                     <div class="gallery">
                         
                       <div>
                         <div class="gw-lkbox">
                            
-                            <div class="main-b-img">
+                            <div class="main-b-img  main-b-img1 on">
                                 <h2>
                                     WORLDWIDE <br> K-POP
                                  </h2>
                                 <img src="./img/K-POP.jpg" alt="">
                               
                             </div>
-                            <div class="main-b-img">
+                            <div class="main-b-img main-b-img2">
                                 <img src="./img/SUMMERSONG.jpg" alt="">
                                  <h2>
                                  COOL SUMMER SONG
                                 </h2>
                             </div>
-                            <div class="main-b-img">
-                                <img src="./img/live.jpg_large" alt="">
+                            <div class="main-b-img main-b-img3">
+                                <img src="./img/live.jpg_large" alt="" value="CONCERT">
                                  <h2>
                                    LIVE CONCERT
                                 </h2>

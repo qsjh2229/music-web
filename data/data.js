@@ -1,23 +1,37 @@
 let $container=$('.gallery-wrap')
 let $containerCon=$('.gallery-wrap li')
 let $loadMoreBtn=$('.loadMoreBt')
+let $loadMore=$('.loadMore')
 let $mainImg=$('.main-b-img')
 let $letaddItemCount=6;
 let $added=0;
 let $allDate=[];
+let $filteredData = [];
+let $filter = $('#gallery-filter');
+
+
+btnhide()
+function btnhide(){
+if($filteredData<=$letaddItemCount +1){
+  $loadMore.hide()
+}else{ $loadMore.show()}
+}
+
 
 $.getJSON('./data/video.json',function(data){
     //console.log(data)
     $allDate=data;
+    $filteredData =$allDate;
     addItem()
     $loadMoreBtn.click(addItem)
+    $filter.on('change', 'input[type="radio"]', filterItems);
     
 
 })
 function addItem(data){
     let element=[];
     let sliceData;
-    sliceData=$allDate.slice($added,$added += $letaddItemCount)
+    sliceData=$filteredData.slice($added,$added += $letaddItemCount)
     $.each(sliceData, function(index, item){
       const fileExtension = item.video.split('.').pop().toLowerCase();
       const isMp4 = fileExtension === 'mp4';
@@ -53,10 +67,39 @@ function addItem(data){
       }
  
   })
+  
+  
+  
+  $("#filter-k-pop").change(function() {
+    if ($(this).is(":checked")) {
+      $mainImg.removeClass('on');
+      $('.main-b-img1').addClass('on');
+    } else {
+      $('.main-b-img1').removeClass('on');
+    }
+  });
+  
+  $("#filter-summer-song").change(function() {
+    if ($(this).is(":checked")) {
+      $mainImg.removeClass('on');
+      $('.main-b-img2').addClass('on');
+    } else {
+      $('.main-b-img2').removeClass('on');
+    }
+  });
+  
+  $("#filter-video").change(function() {
+    if ($(this).is(":checked")) {
+      $mainImg.removeClass('on');
+      $('.main-b-img3').addClass('on');
+    } else {
+      $('.main-b-img3').removeClass('on');
+    }
+  });
   $container.append(element);
   console.log($(".gallery-item").length);
-  $mainImg.css("display", "none");
-  if ($(".gallery-item").length <= 6) {
+
+/*   if ($(".gallery-item").length <= 6) {
       $mainImg.eq(0).css({ "display": "block", "height": "100%" });
   } else if ($(".gallery-item").length <= 12) {
       $mainImg.eq(0).css({ "display": "block", "height": "50%" });
@@ -66,8 +109,27 @@ function addItem(data){
       $mainImg.eq(1).css({ "display": "block", "height": "40%" });
       $mainImg.eq(2).css({ "display": "block", "height": "20%" });
   }
-
+ */
 }
+
+function filterItems() {
+  let key = $(this).val();
+  $filteredData = [];
+  $added = 0;
+
+  $container.empty();
+  $added = 0;
+  if (key == 'all') {
+    $filteredData = $allDate;
+  } else {
+    $filteredData = $.grep($allDate, function(item) {
+      return item.category === key;
+    });
+  }
+
+  addItem(true);
+}
+
 
  $('.multiple-items').slick({
     infinite: true,

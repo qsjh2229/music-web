@@ -13,9 +13,10 @@ $white-color: #fff;
 }
 
 body {
-  background: $bg-color;
+
   color: $white-color;
   font-family: "San Francisco";
+  background: $bg-color;
 }
 a {
   color: $white-color;
@@ -558,32 +559,26 @@ a {
     }
   }
 }
-
+#section4 > div > .gallery > div > .gw-lkbox > .main-b-img {
+  display: none;
+}
+#section4 > div > .gallery > div > .gw-lkbox > .main-b-img.on {
+  display: block;
+  height: 100%;
+}
 #section4 {
   width: 100%;
   > div {
     height: 100%;
-    .tabMenu {
+    .tabMenu { 
+      background: #000;
       height: 100px;
-      background: #20021e8f;
-      ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100px;
-        li {
-          line-height: 100px;
-          a {
-            display: block;
-            padding: 0px 18px;
-            color: #aab6b1;
-            font-size: 20px;
-            &.addTab {
-              background: #ffe2fa44;
-              border-radius: 10px;
-              color: #fff;
-              height: 10%;
-            }
+      background: #ffffff;
+      form { color: #000; width: 100%; text-align: center;
+        span {  font-size: 20px; font-weight: bold;
+           input[type="radio"] {opacity: 0;padding: 20px 30px; 
+           }
+          label {cursor: pointer;
           }
         }
       }
@@ -647,7 +642,9 @@ a {
                 position: relative;
                 width: 100%;
                 .gallery-video {
-                  .d-video{display: block;}
+                  .d-video {
+                    display: block;
+                  }
                   display: block;
                   position: relative;
                   width: 100%;
@@ -736,8 +733,9 @@ a {
           }
         }
       }
-      
+
       .loadMore {
+        
         width: 100%;
         padding: 80px 0;
         background: #0c020c;
@@ -848,6 +846,7 @@ a {
 }
 
 #footer {
+  margin-top: 150px;
   width: 100%;
   padding: 50px 0;
   background: #3f093a67;
@@ -971,9 +970,9 @@ a {
       margin-top: 120px;
       font-size: 35px;
     }
-    .se2-genre{
-      .genrebox{
-        height:329px ;
+    .se2-genre {
+      .genrebox {
+        height: 329px;
       }
     }
   }
@@ -995,9 +994,15 @@ a {
     }
   }
 }
-#section4>div>.tabMenu{ height: 70px;}
-#section4>div>.tabMenu>ul{ height: 70px;}
-#section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:50px ;}
+#section4 > div > .tabMenu {
+  height: 70px;
+}
+#section4 > div > .tabMenu > ul {
+  height: 70px;
+}
+#section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+  font-size: 50px;
+}
 
 @media screen and (max-width: 880px) {
   #section2 .se2-genre .genrebox p {
@@ -1031,12 +1036,11 @@ a {
     .genreTitle {
       margin-top: 120px;
     }
-    .se2-genre{
-      .genrebox{
-        height:226px ;
+    .se2-genre {
+      .genrebox {
+        height: 226px;
       }
     }
-    
   }
 
   #section3 {
@@ -1051,25 +1055,37 @@ a {
   #section3 .plat-listwrap ul li div p {
     font-size: 10px;
   }
-  #section4>div>.tabMenu{ height: 60px;}
-#section4>div>.tabMenu>ul{ height: 60px;}
-#section4>div>.tabMenu>ul>li{ 
-  a{ font-size: 13px;}
-}
-#section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:43px !important; }
-
-#section4 > div .gallery > div .gallery-wrap li div a .gallery-title span{margin-top: 10px;}
-
-}
-
-@media screen and (max-width:750px){
-  #section2{.se2-genre{
-    .genrebox{
-      height:220px ;
+  #section4 > div > .tabMenu {
+    height: 60px;
+  }
+  #section4 > div > .tabMenu > ul {
+    height: 60px;
+  }
+  #section4 > div > .tabMenu > ul > li {
+    a {
+      font-size: 13px;
     }
-  }}
-  #section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:38px !important; }
+  }
+  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+    font-size: 43px !important;
+  }
 
+  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title span {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #section2 {
+    .se2-genre {
+      .genrebox {
+        height: 220px;
+      }
+    }
+  }
+  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+    font-size: 38px !important;
+  }
 }
 @media screen and (max-width: 680px) {
   #section2 {
@@ -1112,9 +1128,9 @@ a {
     .genreTitle {
       margin-top: 120px;
     }
-    .se2-genre{
-      .genrebox{
-        height:196px ;
+    .se2-genre {
+      .genrebox {
+        height: 196px;
       }
     }
   }
@@ -1134,7 +1150,8 @@ a {
   }
   #section3 .plat-listwrap ul li div span {
     font-size: 12px;
-  }#section3 .se4-t .se-textbox {
+  }
+  #section3 .se4-t .se-textbox {
     h2 {
       font-size: 35px;
     }
@@ -1142,21 +1159,57 @@ a {
       font-size: 15px;
       margin: 0;
     }
-    
   }
   #section3 .plat-listwrap ul li div p {
     font-size: 8px;
-
-   
   }
-  #section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:35px !important; }
-    
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title>span{padding-bottom: 5px; margin-top: 5px;}
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title>span>strong{font-size: 13px }
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title>span>b{font-weight: 10px;}
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title>span>i{}
-}
+  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+    font-size: 35px !important;
+  }
 
+  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title > span {
+    padding-bottom: 5px;
+    margin-top: 5px;
+  }
+  #section4
+    > div
+    .gallery
+    > div
+    .gallery-wrap
+    li
+    div
+    a
+    .gallery-title
+    > span
+    > strong {
+    font-size: 13px;
+  }
+  #section4
+    > div
+    .gallery
+    > div
+    .gallery-wrap
+    li
+    div
+    a
+    .gallery-title
+    > span
+    > b {
+    font-weight: 10px;
+  }
+  #section4
+    > div
+    .gallery
+    > div
+    .gallery-wrap
+    li
+    div
+    a
+    .gallery-title
+    > span
+    > i {
+  }
+}
 
 @media screen and (max-width: 600px) {
   #section3 {
@@ -1174,33 +1227,37 @@ a {
       }
     }
     .alb-con {
-      ul {flex-direction: column;
-        .first-sec2 { box-sizing: border-box;
+      ul {
+        flex-direction: column;
+        .first-sec2 {
+          box-sizing: border-box;
           padding: 0 20px;
-          &:nth-child(1){display: none;}
-          div{
-            .t-box{
-              .section2-title{
-                h2{
+          &:nth-child(1) {
+            display: none;
+          }
+          div {
+            .t-box {
+              .section2-title {
+                h2 {
                   margin-top: 30px;
                 }
               }
             }
           }
-          
-
         }
       }
     }
     .genreTitle {
       margin-top: 100px;
     }
-    .se2-genre{
+    .se2-genre {
       padding-top: 50px;
-     .genrebox{
-      p{font-size: 25px;
-      height: 175px;}
-     }
+      .genrebox {
+        p {
+          font-size: 25px;
+          height: 175px;
+        }
+      }
     }
   }
 
@@ -1216,13 +1273,21 @@ a {
   #section3 .plat-listwrap ul li div p {
     font-size: 7px;
   }
-  #section4>div>.tabMenu{ height: 50px;}
-#section4>div>.tabMenu>ul{ height: 50px;}
-#section4>div>.tabMenu>ul>li{ 
-  a{ font-size: 12px; padding: 0 10px;}
-}
-#section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:30px !important; }
-
+  #section4 > div > .tabMenu {
+    height: 50px;
+  }
+  #section4 > div > .tabMenu > ul {
+    height: 50px;
+  }
+  #section4 > div > .tabMenu > ul > li {
+    a {
+      font-size: 12px;
+      padding: 0 10px;
+    }
+  }
+  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+    font-size: 30px !important;
+  }
 }
 
 @media screen and (max-width: 530px) {
@@ -1235,20 +1300,21 @@ a {
       }
     }
     .alb-con {
-      ul {flex-direction: column;
-        .first-sec2 { box-sizing: border-box;
+      ul {
+        flex-direction: column;
+        .first-sec2 {
+          box-sizing: border-box;
           padding: 0 20px;
-         
-          div{
-            .t-box{
-              .section2-title{
-                h2{
+
+          div {
+            .t-box {
+              .section2-title {
+                h2 {
                   margin-top: 20px;
                 }
               }
             }
           }
-        
         }
       }
     }
@@ -1256,12 +1322,14 @@ a {
       margin-top: 80px;
       font-size: 25px;
     }
-    .se2-genre{
+    .se2-genre {
       padding-top: 50px;
-     .genrebox{
-      p{font-size: 23px;
-      height: 151px;}
-     }
+      .genrebox {
+        p {
+          font-size: 23px;
+          height: 151px;
+        }
+      }
     }
   }
   #section3 .se4-t .se-textbox {
@@ -1276,16 +1344,17 @@ a {
   .slick-track {
     padding: 15px 0;
     padding-bottom: 40px;
-    
   }
 }
 @media screen and (max-width: 430px) {
-  .se2-genre{
-   
-   .genrebox{
-    p{font-size: 18px !important;}
-    height:125px ;
-   }}
+  .se2-genre {
+    .genrebox {
+      p {
+        font-size: 18px !important;
+      }
+      height: 125px;
+    }
+  }
   #section3 .se4-t .se-textbox {
     h2 {
       font-size: 20px;
@@ -1300,17 +1369,21 @@ a {
     padding: 13px 0;
     padding-bottom: 40px;
   }
-  #section4>div>.gallery>div>.gw-lkbox>.main-b-img>h2{ font-size:25px !important; }
-
-
+  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+    font-size: 25px !important;
+  }
 }
 
 @include mq("small-screen") {
   .mobile-modal-menu {
     display: block;
   }
-  .t-video{display: block;}
-  .d-video{display: none;}
+  .t-video {
+    display: block;
+  }
+  .d-video {
+    display: none;
+  }
   #header {
     div {
       .header-mobile-menu-bar {

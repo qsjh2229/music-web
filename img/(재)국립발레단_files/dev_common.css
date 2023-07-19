@@ -1,0 +1,587 @@
+@charset "utf-8";
+
+/** COMMON **/
+.nodata {width:100% !important;text-align:center;padding: 10px 0;}
+
+.slick-arrow {cursor:pointer;}
+.mobile_block {display:inline !important;}
+.ui-widget.ui-widget-content {z-index:9999;text-align:center;}
+
+input[readonly=readonly] { background-color:#f9f9f9; }
+button.btn_blank,a.btn_blank {padding:5px 20px 6px;font-weight:700;font-size:14px;color:#fff;text-align:center;vertical-align:middle;background: #272727;}
+
+.list-sort .wrap-select {width:auto;}
+.list-sort .wrap-select select {padding:0 23px 0 9px;}
+
+/* 메인 */
+#container.main-container .section .sec.news ul.nodata li {padding-bottom:110px;border:none;}
+#container.main-container .section .sec.news ul.nodata li:after{background:none;}
+
+#container.main-container .section .sec.insta ul li img {min-height: 230px;}
+html[lang="en"] #container.main-container .section .sec.insta ul li a > strong {display:none;}
+
+#container.main-container .section.last {padding-top:0;}
+#container.main-container .section .sec.mb {padding-top:20px;}
+#container.main-container .section .sec.mb:first-child .video-area .inner {padding-right:10px;}
+#container.main-container .section .sec.mb .video-area .inner iframe {width:100%;height:330px;}
+
+/* 메뉴 */
+html[lang="en"] #gnb > ul > li.g1 > ul > li:nth-child(2) > a,
+html[lang="en"] #gnb > ul > li.g1 > ul > li:nth-child(3) > a{width:110px;}
+html[lang="en"] #gnb > ul > li.g4 > ul > li:nth-child(1) > a {width:90px;}
+
+/* 팝업*/
+.main-popup {display:none;}
+.main-popup p {display:inline;}
+.main-popup .popup-content img {width:100%;height:100%;}
+.main-popup .popup-footer {text-align:right;padding:5px 0;background-color:#fff;}
+
+/*** 본문 ***/
+.wrapper {overflow-x:hidden;}
+
+/** 국립발레단 소개**/
+/* 인사말 */
+#container .message .txt p {padding: 0px 15px 40px;line-height:1.4;font-size: 16px;word-break: keep-all;}
+
+/* CI */
+.intro-ci .ci-desciption .desc .cont p {line-height:1.5;}
+.intro-ci .ci-desciption .desc .cont p ,
+.intro-ci .ci-desciption .desc .cont span {font-size:16px !important;}
+
+/* 고객헌장 */
+.charter .char-desciption .desc .cont ul li > p,
+.charter .char-desciption .desc .cont ul li {line-height:1.75;}
+.charter .char-desciption .desc .cont ul li.indent > ul > li {text-indent:-18px;margin-left:18px;}
+.charter .char-desciption .desc .cont ul li.indent > ul > li > ul > li{text-indent:-7px;margin-left:7px;}
+.charter.human .char-desciption .desc .cont ul li.indent > ul > li {text-indent:-35px;margin-left:35px;}
+
+
+/* 이사진 */
+html[lang="en"] .intro-directors .list ul {width:100%}
+html[lang="en"] .intro-directors .list ul li {width:90%;height:auto;padding:30px 0;margin-left:auto;margin-right:auto;}
+html[lang="en"] .intro-directors .list ul li .position span {width:120px;line-height:100%;}
+html[lang="en"] .intro-directors .list ul li .position strong {width:215px;}
+html[lang="en"] .intro-directors .list ul li .desc {width:50%;}
+
+/* 발레단 사람들 */
+html[lang="en"] .people-admin-staff .chart ul li {height:auto;}
+html[lang="en"] .people-admin-staff .chart ul li a {height:auto;padding:40px 0;}
+html[lang="en"] .people-admin-staff .chart ul li a span {font-size:17px;}
+
+html[lang="en"] .people-admin-staff .chart .director {height:auto;}
+html[lang="en"] .people-admin-staff .chart .director a {height:auto;padding:40px 0;}
+html[lang="en"] .people-admin-staff .chart .director a strong {padding:0;}
+html[lang="en"] .people-admin-staff .chart .director a span {display:block;font-size:22px;}
+
+html[lang="en"] .people-admin-staff .chart .director.director2 a strong {margin-top:-24px;position:relative;top:12px;}
+
+html[lang="en"] .people-admin-staff .people-list .tab-anchor ul li {width: 22%;}
+html[lang="en"] .people-admin-staff .people-list .tab-anchor ul li:nth-child(3) {width: 26%;}
+html[lang="en"] .people-admin-staff .people-list .tab-anchor ul li:nth-child(4) {width: 30%;}
+
+.section-people .people-list .people ~ .people.type1 {margin-bottom:54px;}
+.section-people .people-list .people ~ .people.type1.list0 {margin-bottom:0px;}
+.section-people .people-list .people ~ .people.type2 {margin-top:0;}
+.people-list .people .list ul li .info strong > span {display:block;}
+.staffs-detail .info .name {width:150%;}
+.staffs-detail .info .name span > span {margin-left:10px;font-size:40px}
+
+.section-people .staff3 .list ul li:nth-child(3n+1) {margin-left:0;}
+.section-people .staff3 .list ul li.l3 ~ li {margin-top:50px;}
+
+.people-artist-list .people-list .people5 .list .info {line-height:1.7;}
+.people-artist-view .staffs-detail .info .history .sec ~ .sec.dance {margin-top:32px;}
+
+html[lang="en"] .people-admin-staff .people-list .director .inner {width:325px;}
+html[lang="en"] .people-admin-staff .people-list .director .inner .info {width:175px;}
+
+/* 경영공시 */
+.management-detail.articles ul li .inTable {display:table;width:100%;}
+.management-detail.articles ul li .inTable ol {display:table-column-group;}
+.management-detail.articles ul li .inTable ol li {display:table-column;}
+.management-detail.articles ul li .inTable dl {display:table-row;}
+.management-detail.articles ul li .inTable dl dt,
+.management-detail.articles ul li .inTable dl dd {display:table-cell;border:1px solid #fff;padding:15px;vertical-align:middle;line-height:1.5;}
+.management-detail.articles ul li .inTable dl dt {background-color:#272727;color:#fff;text-align:center;}
+.management-detail.articles ul li .inTable dl dd {background-color:#dadada;}
+.management-detail.articles ul li .inTable dl dd.center{text-align:center;}
+.management-detail.articles ul li .inTable dl dd.right{text-align:right;}
+
+.register-info .register-guide .sort-class .txt div {position:absolute;margin-top:10px;}
+.register-info .register-guide .sort-class .txt div p{line-height:50%;font-size:16px;color:#7d2426;}
+
+.register-info .register-guide .info .cont1 div {margin-top:7px;}
+.register-info .register-guide .info .cont1 div p {font-size:16px;line-height:1.2;}
+.register-info .register-guide .info .cont div table {width:100%;margin-top:5px;border:none !important;font-size:16px;}
+.register-info .register-guide .info .cont div table tr td{border:none !important;}
+.register-info .register-guide .info .cont div table tr td:first-child{font-weight:bold;width:100px !important;vertical-align:top;}
+.register-info .register-guide .info .cont div table tr td:nth-child(2) {width:auto !important;}
+
+/*.register-info .register-guide .info .cont div table tr td:nth-child(2) p {text-indent:-14px;margin-left:14px;}*/
+
+.register-info .register-guide .info .cont div table tr td p {line-height:1.4;}
+.register-info .register-guide .info .cont div p br {line-height:0;}
+.register-info .register-guide .info .cont div p:empty {height:0;}
+
+.register-info .register-guide .sort-class {position:relative;}
+.register-info .register-guide .sort-class .txt .btns {position:absolute;bottom:19px;}
+.section-academy.gallery .popup-section .photos-list .photos {overflow:hidden;}
+
+
+/** 공연정보 **/
+/* 리스트 */
+.concert-list .concerts ul li a .info strong br{display:none;}
+
+/* 시놉시스 */
+.concert-view .set .desc .inner td, 
+.concert-view .set .desc .inner td * {font-size:16px !important;line-height:1.3;}
+
+/* 크레딧 */
+.concert-view .set .basic2 * {font-family: inherit !important;}
+.concert-view .set .basic2 h2 ,
+.concert-view .set .basic2 h2 + strong {font-size:14px;}
+.concert-view .set .basic2 .info * {font-size:15px !important;}
+.concert-view .set .credit p {font-size: 16px;}/* 2023-04-16 변경 */
+.concert-view .set .credit table tr td a p {position:relative;color:#7D2325;padding-right:16px;background:url(../images/common/ico_txt_link.svg) no-repeat right center;width:fit-content;font-size: 16px}/* 2023-04-16 추가 */
+.concert-view .set .credit table tr td a p:before {position:absolute;content:'';bottom:-2px;left:0;right:0;height:1px;background:#7D2325;}/* 2023-04-16 추가 */
+
+.concert-view .set .credit table {
+    display: inline-table;
+    border: none !important;
+    width: 100%;
+}
+
+.concert-view .set .credit table tr td {
+	border: none;
+	vertical-align: top;
+	text-align: left;
+}
+
+.concert-view .set .basic .credit table tr td:first-child {width: 150px;font-weight:bold;}
+.concert-view .set .basic .credit table tr td:first-child p {display: block;}
+.concert-view .set .basic .credit table tr td p {line-height:1.7;}
+
+.concert-view .set .credit table tr td {
+	padding:6px 0;/* 2023-04-16 변경 */
+}
+
+.concert-view .set .credit table tr td p {display: block;}
+.concert-view #Casting .credit .wrap-tbl {display: inline-block;}
+.concert-view #Casting .credit .wrap-tbl.m {display:none;}
+.concert-view #Casting .credit .wrap-tbl table {border-collapse: collapse;}
+.concert-view #Casting .credit .wrap-tbl table tr td {width: auto;border: 1px solid #ddd;padding: 15px 10px;text-align: center;vertical-align: middle;}
+.concert-view #Casting .credit .wrap-tbl.m table tr td {width:auto;padding:5px;font-size: 12px;}
+.concert-view #Casting .credit .wrap-tbl.m table tr td p {font-size: 12px;}
+.concert-view #Casting .credit .wrap-tbl table tr:first-child td ,
+.concert-view #Casting .credit .wrap-tbl table tr:first-child th {background-color:#880c0a;}
+.concert-view #Casting .credit .wrap-tbl table tr:first-child td p {font-weight:500;color:#fff;}
+.concert-view #Casting .credit .wrap-tbl table tr td:first-child ,
+.concert-view #Casting .credit .wrap-tbl table tr th:first-child {background-color:#880c0a;}
+.concert-view #Casting .credit .wrap-tbl table tr td:first-child p {font-weight:500;color:#fff;}
+
+
+.concert-view #Casting .credit .wrap-tbl table tr.rowspan + tr td {background-color:#fff;}
+.concert-view #Casting .credit .wrap-tbl table tr.rowspan + tr td p {color:#000;font-weight: normal;}
+
+.concert-view .set .basic p {line-height:1.5;text-align: left;}
+
+/* 공연 본문 */
+.concert-view .detail-view * {font-family: inherit !important;word-break: keep-all;}
+
+html[lang="en"] .concert-view .set .credit table tr td:first-child {width:275px !important;}
+
+/* 캐스팅 */
+.concert-view .set .desc .inner .wrap-tbl .inner {overflow-y:hidden;}
+.concert-view .set .desc .inner .wrap-tbl .inner table {border:none !important;width:100%;}
+.concert-view .set .desc .inner .wrap-tbl .inner table tr td:first-child {min-width:150px !important;}
+.concert-view .set .desc .inner .wrap-tbl .inner table tr td {border:none !important;padding:8px 0;font-family:'Noto Sans TC','Noto Sans KR' !important;}
+.concert-view .set .desc .inner .wrap-tbl .inner table tr td p {text-align:center;}
+
+/* 월간일정 */
+.concert-month .popup-wrap.no-image .popup-section .contents .info {width:auto;}
+.concert-month .calendar table tbody td a {max-height:151px;}
+
+
+/* 게시판 */
+.board-view .cont {overflow-x:auto;}
+.board-view .cont a {font-weight: 500;color: #7d2426;}
+.board-view .cont table[align="center"] {margin:0 auto;}
+.board-view .cont td, 
+.board-view .cont td *,
+.board-view .cont td span,
+.board-view .cont td p {line-height:1.5 !important;font-size:15px !important;}
+
+.list-sort.search .search-basic fieldset .btn-search {cursor:pointer}
+
+/** 후원회 **/
+
+
+/* 인사말 */
+.supporters-greeting .greeting > .message .from .name {display: block;float:left;width: 100%;}
+.supporters-greeting .greeting > .message .from .sign {
+    padding-left: 130px;
+}
+
+.supporters-greeting .greeting > .message .from .sign img {margin-top:-10px;}
+html[lang="en"] .supporters-greeting .treatment .detail table tbody th {width:180px;}
+html[lang="en"] .supporters-greeting .treatment .detail table tbody td.desc {width:285px;}
+html[lang="en"] .supporters-greeting .treatment .detail table tbody td .bx-cont {width:190px;height:auto;padding:5px;line-height:1.5;}
+html[lang="en"] .supporters-greeting .treatment .note ul { display:table };
+html[lang="en"] .supporters-greeting .treatment .note ul li {display:table-row;margin:0;}
+html[lang="en"] .supporters-greeting .treatment .note ul li strong,
+html[lang="en"] .supporters-greeting .treatment .note ul li span {display:table-cell;}
+html[lang="en"] .supporters-greeting .treatment .note ul li strong {width:17%;}
+html[lang="en"] .supporters-greeting .treatment .note ul li span {width:83%;}
+html[lang="en"] .supporters-greeting .treatment .note ul li span:before {content:":";margin-left:-10px;margin-right:5px;vertical-align:text-top;}
+html[lang="en"] .supporters-greeting .treatment .note ul li.spec {margin-bottom:15px;}
+
+/* 후원회 조직 */
+.supporters-org .list ul {width:565px;}
+.supporters-org .list ul li {width:100%;}
+.supporters-org .list ul li .position span {width:125px;}
+.supporters-org .list ul li.plural .position {vertical-align:top;}
+.supporters-org .list ul li.plural:last-child .position span {}
+.supporters-org .list ul li.plural:after {top:38px;}
+.supporters-org .list ul li.plural:before,
+.supporters-org .list ul li.plural .position > span {vertical-align:top;margin-top:20px;}
+
+html[lang="en"] .supporters-org .list ul {width:800px;}
+html[lang="en"] .supporters-org .list ul li.plural .desc strong {width: 230px;vertical-align:middle;white-space: break-spaces;}
+
+html[lang="en"] .supporters-org .list ul li.plural .desc {width:505px;}
+html[lang="en"] .supporters-org .list ul li.plural .desc > strong {width:230px;}
+html[lang="en"] .supporters-org .list ul li.plural .desc > span {width:545px;}
+html[lang="en"] .supporters-org .list ul li.plural .desc > span > span {display:inline-block;width:345px;padding:19px 0;vertical-align:middle;white-space:normal;}
+
+html[lang="en"] .supporters-org .list ul li .position span {width:95px;padding-right:15px;}
+/** 후원회 **/
+
+/** 메뉴 **/
+#header .inner .head .sns a.tw {width:24px;height:24px;background: url(../../assets/images/common/ico-tw.svg) no-repeat center center;}/* 2023-04-16 변경 */
+/** 메뉴 **/
+
+/* 오시는 길 */
+.intro-location .contents .map {overflow:hidden;width:980px;height:500px;}
+.intro-location .contents .map .gm-style-iw div > div {overflow:hidden !important;}
+.intro-location .contents .m.map {width:100%;}
+
+.intro-location .contents .map iframe {width:980px;height:500px;}
+.intro-location .contents .m.map iframe {width:100%;height:500px;}
+
+.intro-location .contents .m.map div {width:auto;}
+
+html[lang=ko] .intro-location .contents .map iframe {margin-top:-40px; }
+html[lang=ko] .intro-location .contents .m.map iframe {margin-top:-95px}
+
+/* 자주 묻는 질문 */
+.faq-contents .faq-list .cont table {background-color:inherit !important;}
+.faq-contents .faq-list .cont table tr td {background-color:inherit !important;line-height:1.4;}
+.faq-contents .faq-list .cont table tr td p {line-height:1.4;}
+
+/* 아카데미 소개*/
+html[lang="en"] .section-academy.academy-intro .intro .cont p,
+html[lang="en"] .section-academy.academy-intro .intro .cont p span {font-family:'Noto Sans TC' !important;}
+.section-academy.academy-intro .intro .cont p span {display:inline;}
+
+/* 아카데미 갤러리 */ 
+.section-academy.gallery .gallery-main .photos .slick-arrow {position:absolute;top:50%;z-index:1;width:54px;height:54px;margin-top:-27px;font-size:0;text-indent: -9999em;}
+.section-academy.gallery .gallery-main .photos .slick-arrow.slick-prev {left:30px;background:url(/assets/images/common/btn-slide-prev.png) 0 0 no-repeat;}
+.section-academy.gallery .gallery-main .photos .slick-arrow.slick-next {right:30px;background:url(/assets/images/common/btn-slide-next.png) 0 0 no-repeat;}
+.section-academy.gallery .gallery-main ul li {text-align:center;}
+.section-academy.gallery .gallery-main ul li img {display:inline-block;max-width:980px;max-height:1000px;}
+.section-academy.gallery .gallery-main ul li:not(.slick-cloned) ~ li {opacity:0;}
+
+.section-academy.gallery .gallery-list {margin-top:40px;}
+.section-academy.gallery .gallery-list ul {margin:0;}
+.section-academy.gallery .gallery-list ul li {height:auto;width:160px;overflow:hidden;margin:0 1.6px;border:5px solid #fff;}
+.section-academy.gallery .gallery-list ul li.on {border-color:#7d2426;} 
+.section-academy.gallery .gallery-list ul li a {max-height:93px;}
+
+/* 아카데미 수강신청 */
+#container .popup-academy .contents table tbody td.birth .wrap-select select {width:80px;}
+#container .bx-form table tbody td.birth .wrap-select select {width:80px;}
+#container .contents .btns-submit a.check {background:#3d0406;width:150px;}
+
+.section-academy .sec .tbl-basic table {border:none;}
+.section-academy .sec .tbl-basic table tr td:nth-child(1) {background-color:#ecdede !important;width:31% !important;}
+.section-academy .sec .tbl-basic table tr td:nth-child(2) {background-color:#dadada !important;width:69% !important;}
+.section-academy .sec .tbl-basic table tr td[colspan="2"] {background-color:#272727 !important;color:#fff;}
+
+
+
+/* 아카데미 환불신청 */
+.contents .bx-form table tbody td .refund-file {vertical-align:sub;}
+
+/* 페이지 모듈 */
+.contents.page {padding:10px 0;}
+.contents.page p ,
+.contents.page p span {
+margin:0 !important;
+padding:0 !important;
+letter-spacing:0 !important;
+text-indent: 0 !important;
+line-height: 1.3;
+}
+.contents.page table {width:100%;}
+
+/* 1:1 문의 */
+.inquire-1on1 .tbl-inquire table td textarea {padding:10px;}
+
+/* 푸터 */
+#footer {overflow:hidden;}
+#footer .privacy {font-weight:500;margin-top: 2px;font-size: 14px;color:#000;display: inline-block;vertical-align: bottom;border-bottom: 1px solid #000;padding: 0 2px 2px 0;margin-left: 8px;} 
+
+html[lang="en"] #footer .inner .note {width:250px;}
+html[lang="en"] #footer .inner .links ul li ~ li {margin-left:15px;}
+
+.pc-only {display: block;}
+.mobile-only {display:none;}
+
+@media screen and (max-width:980px) {
+	/* 이사진 */
+	html[lang="en"] .intro-directors .list ul li:after {top: 50%;margin-top: -10px;}
+	
+	/* 메인 */
+	#container.main-container .section .sec.news ul.nodata {height:0;margin-top:-15px;}
+	#container.main-container .section .sec.news ul.nodata li:after {left:-50%;width:200%;height:200%;top:-30px;background:#fff;} 
+	#container.main-container .section .sec.mb:first-child .video-area .inner {padding:0;}
+	#container.main-container .section .sec.mb .video-area .inner iframe {width:100%;height:400px;}
+	
+	/* 메뉴*/ 
+	#gnb .etc .sns {display:flex;flex:1;/*width:145px;*/}/* 2023-04-16 변경 */
+	/*#gnb .etc .sns .ins{left:34%;}*/
+	#gnb .etc .sns .tw {/*left:65%;*/width:32px;height:32px;/*margin: -7.5px 0 0 -7.5px;*/background: url(../images/common/ico-tw.svg) no-repeat;/*background-size: 15px 15px;*/}/* 2023-04-16 변경 */
+	
+	html[lang="en"] #gnb > ul > li.g4 a {width:auto;}
+
+	.register-info .register-guide .info .cont div table tr td {font-size:12px;}
+	.register-info .register-guide .info .cont1 div p {font-size:12px;}
+
+	.register-info .register-guide .info .cont div table tr td:first-child{width:25% !important;vertical-align:top;font-weight:bold;}
+
+	.register-info .register-guide .sort-class .txt div {position:static;}
+	.register-info .register-guide .sort-class .txt div p {line-height:100%;font-size:12px;}
+	
+	.register-info .register-guide .sort-class .txt .btns {position:static;}
+	.register-info .register-guide .info .cont .tit ~ p {font-size: 12px;}
+	
+	/* CI */
+	.intro-ci .ci-desciption .desc .cont {margin-top:1.5em;}
+
+	/* 크레딧 */
+	.concert-view .set .basic5 .credit {padding:15px;background:#fff;}/* 2023-04-16 변경 */
+	.concert-view .set .basic5 .credit.line {border-top: 1px solid #7d2426;border-bottom: 1px solid #7d2426;margin-top:20px;}/* 2023-04-16 추가 */
+	.concert-view .set .basic5 .credit table {margin-top:15px;border:none !important;}
+	.concert-view .set .basic5 .credit table tr td {border:none !important;background-color:#fff !important;font-size:24px!important;padding-bottom:10px;}/* 2023-04-16 변경 */
+	.concert-view .set .basic5 .credit table tr td:first-child {width:40% !important;font-weight:bold;vertical-align:top;}/* 2023-04-16 변경 */
+	.concert-view .set .basic5 .credit table tr td:first-child p {}
+	.concert-view .set .basic5 .credit table tr td p {line-height:1.5;}
+	.concert-view .set .basic5 .credit table:nth-child(2) tr td {padding-left:0;}
+	.concert-view .set .basic5 .credit table:nth-child(2) tr td p {display:block;}
+
+
+	/* 캐스팅 */
+	.concert-view .set .desc .wrap-tbl .inner table {border:none !important;}
+	.concert-view .set .desc .wrap-tbl .inner table tr td:first-child {width:135px !important;}
+	.concert-view .set .desc .wrap-tbl .inner table tr td {border:none !important;}
+	.concert-view .set .desc .wrap-tbl .inner table tr td p {text-align:center;}
+
+	.mobile_hide {display:none}
+
+	/* 공연상세 */
+	.section-concert .list-sort  {text-align:center;}
+	.section-concert .list-sort .wrap-select {float:none !important;width:80%;margin:0 auto;}
+	.section-concert .list-sort .wrap-select ~ .wrap-select {display:none;}
+	.section-concert .list-sort .date {display:block;width:180px;margin:0 auto;}/* 2023-04-16 변경 */
+	.list-sort .date a.prev {left:0;}
+	.list-sort .date a.next {right:0;}
+	
+	/* 강사진 소개 */
+	.people-artist-view .staffs-detail .info .history .sec ~ .sec.prize {margin-top:0;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-main ul li img {width:100%;}
+	.section-academy.gallery .gallery-list {overflow:hidden;}
+	.section-academy.gallery .gallery-list ul {margin-left: 0px;}
+	.section-academy.gallery .gallery-list ul li {width: calc(33.33% - 3px);padding:0px;}
+	.section-academy.gallery .gallery-list ul li img {border:none}
+	
+	/* 발레단 사람들 */
+	.people-artist-view .staffs-detail .info .history {min-height:100%;}
+	.people-list .people .list ul li a {min-height:660px;}
+	.staffs-detail .info .name {width:auto;}
+	.staffs-detail .info .name span > span {font-size:20px;}
+	.section-people .staff3 .list ul li.l2 ~ li {margin-top:30px;}
+	.section-people .staff3 .list ul li:nth-child(odd) {margin-left:0;}
+	.section-people .staff3 .list ul li:nth-child(even) {margin-left:6.26%;}
+	.section-people .staff3 .list ul li .info {height:60px;}
+	
+	html[lang="en"] .people-admin-staff .people-list .director .inner .info {width:53.4%;}
+	
+	
+	/* 아카데미 */
+	.contents .list-sort.search .search-basic fieldset {display:inline-block;width:280px}
+	
+	/** 후원회 **/
+	html .supporters-org .contents .list ul,
+	html .supporters-org .contents .list ul li {width:100%;height:auto;padding:15px 0;}
+	html .supporters-org .contents .list ul li .position span {width:100%;margin-top: 0;}
+	html .supporters-org .contents .list ul li.plural .desc strong {
+    width: auto;
+}
+	html .supporters-org .list ul li.plural:after {top: 13px;}
+	
+	html[lang="en"] .supporters-org .list ul li.row1 .desc {text-align:right;display:block;padding:10px;}
+	
+	html[lang="en"] .supporters-org .list ul li.plural .desc {width:100%;}
+	html[lang="en"] .supporters-org .list ul li.plural .desc > span {width:100%;}
+	html[lang="en"] .supporters-org .list ul li.plural .desc > span > span {text-align:right;padding:7px 0;display:block;width: 50%;margin-left: auto;}
+	
+	
+	/* 인사말 */
+	.supporters-greeting .greeting > .message .from {position:relative;}
+	.supporters-greeting .greeting > .message .from .name {display:block;text-align:left;}
+	.supporters-greeting .greeting > .message .from .name > strong {display:block;padding-top: 19px;}
+	.supporters-greeting .greeting > .message .from .sign {position:absolute;top:20px;right: -20px;}
+	.supporters-greeting .greeting > .message .from .sign img {width:100%;}
+	
+	html[lang="en"] .supporters-greeting .treatment .detail table tbody th {width:100%;}
+	html[lang="en"] .supporters-greeting .treatment .detail table tbody td.desc {width:100%;}
+	html[lang="en"] .supporters-greeting .greeting > .message .from .name {width:100%;}
+	html[lang="en"] .supporters-greeting .greeting > .message .from .sign {position:static;}
+	
+	/* 게시판 */
+	.contents .board-view .cont {line-height:1.5}
+	.board-view .cont td, 
+	.board-view .cont td * {line-height:1.4;font-size:12px;}
+	
+	
+	/* 고객헌장 */
+	.charter .char-desciption .desc .cont ul li.indent > ul > li {text-indent:-14px;margin-left:14px;}
+	
+	/* 푸터 */
+	#footer .inner .info {text-align:center;}
+	html[lang="en"] #footer .inner .note {width:100%;}
+	
+	.mobile_block {display:block !important;}
+	.mobile_none {display:none !important;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li {margin:0;}
+	.section-academy.gallery .gallery-list ul li a {max-height:160px;}
+	
+	/* 1:1 문의 */
+	.inquire-1on1 .tbl-inquire * {display: inherit;}
+	.inquire-1on1 .tbl-inquire table th,
+	.inquire-1on1 .tbl-inquire table td{width:100%;display:block;padding:5px;float:none;}
+}
+
+@media screen and (max-width:768px) {
+	
+	/* 발레단 사람들 */
+	.people-list .people .list ul li a {min-height:515px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li a {max-height:160px;}
+	#container.main-container .section .sec.insta ul li img {min-height:auto;}
+}
+
+@media screen and (max-width:640px) {
+	/* 메인 */
+	#container.main-container .section .sec.mb:last-child {padding-top:10px;}
+	#container.main-container .section .sec.mb .video-area .inner iframe {width:100%;height:320px;}
+	
+	html[lang="en"] #container.main-container .section .sec.fb ul li a strong {top:12px;left:12px;}
+	
+	/* 이사진 */
+	html[lang="en"] .intro-directors .list ul li .position {width:35%;}
+	
+	.management-detail.articles ul li .inTable dl dt,
+	.management-detail.articles ul li .inTable dl dd {padding:10px;}
+	
+	/* 발레단 사람들 */
+	.people-list .people .list ul li a {min-height:435px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li a {max-height:135px;}
+	
+	.pc-only {display: none;}
+	.mobile-only {display: block;}
+
+	.concert-view #Casting .credit .wrap-tbl {display:block;}
+	.concert-view #Casting .credit .wrap-tbl table {width:100%;}
+	.concert-view #Casting .credit .wrap-tbl table tr td {width:auto;padding: 10px 5px;font-size: 12px;}
+	.concert-view #Casting .credit .wrap-tbl table tr td p {font-size: 12px;}
+	.concert-view #Casting .credit .wrap-tbl table tr:first-child td p {font-weight:normal;}
+	
+}
+
+@media screen and (max-width:500px) {
+	
+	/* 인사말 */
+	#container .message .txt p:empty {display:none;}
+	
+	/* 경영공시 */
+	.management-detail.articles ul li .inTable dl .mob_hide {display:none;}
+	
+	/* 발레단 사람들 */
+	.people-list .people .list ul li a {min-height:350px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li a {max-height:105px;}
+}
+
+@media screen and (max-width:475px) {
+	
+	/* 이사진 */
+	html[lang="en"] .intro-directors .list ul li .position strong {width:120px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li {border-width:3px;}
+	.section-academy.gallery .gallery-list ul li a {max-height:90px}
+	
+}
+
+@media screen and (max-width:430px) {
+	
+	/* 이사진 */
+	html[lang="en"] .intro-directors .list ul li .position strong {width:100px;}
+	
+	/* 아카데미 수강신청 */
+	#container .bx-form table tbody td.birth .wrap-select {display:inline-block;width:50%;}
+	#container .bx-form table tbody td.birth .wrap-select select {width:100%;}
+	#container .bx-form table tbody td.birth .wrap-select + span {float:none;padding:0px 0 0 5px;display:inherit;}
+	#container .bx-form table tbody td.birth .wrap-select + span:after {content:"";display:block;padding:3px 0;}
+	
+	/* 발레단 사람들 */
+	.people-artist-list .people-list .people5 .list .info strong ~ strong {margin-left:10px;}
+	.people-artist-list .people-list .people5 .list .info strong {font-size:14px;}
+	.people-list .people .list ul li a {min-height:300px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li a {max-height:80px;}
+	
+	/* 팝업 */
+	body .ui-dialog {width:100% !important;}
+}
+
+@media screen and (max-width:375px) {
+	
+	/* 이사진 */
+	html[lang="en"] .intro-directors .list ul li .position {width:31%;}
+	html[lang="en"] .intro-directors .list ul li .position strong {width:75px;}
+	
+	/* 갤러리 */
+	.section-academy.gallery .gallery-list ul li a {max-height:70px;}
+	
+	/* 발레단 사람들 */
+	.people-list .people .list ul li a {min-height:270px;}
+}
+
+@media screen and (max-width:320px) {
+	
+	/* 발레단 사람들 */
+	.people-list .people .list ul li a {min-height:235px;}
+	
+	/* 갤러리 */
+}
