@@ -16,11 +16,12 @@ body {
 
   color: $white-color;
   font-family: "San Francisco";
-  background: $bg-color;
+ 
 }
 a {
   color: $white-color;
 }
+
 .mobile-modal-menu {
   display: none;
   position: fixed;
@@ -139,6 +140,8 @@ a {
   }
 }
 #header {
+  
+.u-logo{color: #000; font-size: 30PX;}
   position: absolute;
   top: 0;
   left: 0;
@@ -281,7 +284,7 @@ a {
       height: 100vh;
       overflow: hidden;
       z-index: 1;
-      background: red;
+   
       #main-video {
         width: 100%;
         height: auto;
@@ -379,10 +382,10 @@ a {
 
   background-image: linear-gradient(
     to right,
-    #5e355b8f,
+    #3a0936,
     #1d081b 50%,
     #1d081b 50%,
-    #5a24568f
+    #3a0e35
   );
 
   .alb-title {
@@ -584,6 +587,7 @@ a {
       }
     }
     .gallery {
+     
       height: 100%;
       > div {
         display: flex;
@@ -733,32 +737,7 @@ a {
           }
         }
       }
-
-      .loadMore {
-        
-        width: 100%;
-        padding: 80px 0;
-        background: #0c020c;
-        text-align: center;
-        .loadMoreBt {
-          margin: 0 auto;
-          cursor: pointer;
-          width: 200px;
-          height: 45px;
-          font-size: 18px;
-          color: #dee4e3;
-          border: 1px solid #52686a;
-          background: #384244;
-          transition: 0.3s;
-
-          &:hover {
-            color: white;
-            background: #6b6f70;
-            border: 1px solid #6b6f70;
-            transition: 0.3s;
-          }
-        }
-      }
+      .u-logo{ padding: 8%; background: rgb(58, 4, 35); font-size: 50px; display: block; text-align: center; color: white;}
     }
   }
 }
@@ -846,10 +825,10 @@ a {
 }
 
 #footer {
-  margin-top: 150px;
+ 
   width: 100%;
   padding: 50px 0;
-  background: #3f093a67;
+  background: rgb(43, 5, 27);
   > div {
     width: 100%;
     max-width: 1090px;
@@ -1066,14 +1045,18 @@ a {
       font-size: 13px;
     }
   }
-  #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
+  #section4 > div > .gallery 
+  
+  > div > .gw-lkbox > .main-b-img > h2 {
     font-size: 43px !important;
   }
 
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title span {
+  #section4 > div .gallery  div .gallery-wrap li div a .gallery-title span {
     margin-top: 10px;
   }
+  #section4 > div .gallery .u-logo{ padding: 10%; background: rgb(58, 4, 35); font-size: 40px; display: block; text-align: center;}
 }
+
 
 @media screen and (max-width: 750px) {
   #section2 {

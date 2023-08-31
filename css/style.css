@@ -3,7 +3,6 @@
 body {
   color: #fff;
   font-family: "San Francisco";
-  background: #222;
 }
 
 a {
@@ -130,6 +129,10 @@ a {
   height: 82px;
   background: rgba(255, 255, 255, 0);
   z-index: 3;
+}
+#header .u-logo {
+  color: #000;
+  font-size: 30PX;
 }
 #header div {
   width: 100%;
@@ -265,7 +268,6 @@ a {
   height: 100vh;
   overflow: hidden;
   z-index: 1;
-  background: red;
 }
 #section1 > div .m-video #main-video {
   width: 100%;
@@ -347,7 +349,7 @@ a {
   box-sizing: border-box;
   width: 100%;
   padding-top: 50px;
-  background-image: linear-gradient(to right, rgba(94, 53, 91, 0.5607843137), #1d081b 50%, #1d081b 50%, rgba(90, 36, 86, 0.5607843137));
+  background-image: linear-gradient(to right, #3a0936, #1d081b 50%, #1d081b 50%, #3a0e35);
 }
 #section2 .alb-title {
   box-sizing: border-box;
@@ -682,28 +684,13 @@ a {
   border-radius: 50%;
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.466);
 }
-#section4 > div .gallery .loadMore {
-  width: 100%;
-  padding: 80px 0;
-  background: #0c020c;
+#section4 > div .gallery .u-logo {
+  padding: 8%;
+  background: rgb(58, 4, 35);
+  font-size: 50px;
+  display: block;
   text-align: center;
-}
-#section4 > div .gallery .loadMore .loadMoreBt {
-  margin: 0 auto;
-  cursor: pointer;
-  width: 200px;
-  height: 45px;
-  font-size: 18px;
-  color: #dee4e3;
-  border: 1px solid #52686a;
-  background: #384244;
-  transition: 0.3s;
-}
-#section4 > div .gallery .loadMore .loadMoreBt:hover {
   color: white;
-  background: #6b6f70;
-  border: 1px solid #6b6f70;
-  transition: 0.3s;
 }
 
 #section3 {
@@ -782,10 +769,9 @@ a {
 }
 
 #footer {
-  margin-top: 150px;
   width: 100%;
   padding: 50px 0;
-  background: rgba(63, 9, 58, 0.4039215686);
+  background: rgb(43, 5, 27);
 }
 #footer > div {
   width: 100%;
@@ -934,8 +920,15 @@ a {
   #section4 > div > .gallery > div > .gw-lkbox > .main-b-img > h2 {
     font-size: 43px !important;
   }
-  #section4 > div .gallery > div .gallery-wrap li div a .gallery-title span {
+  #section4 > div .gallery div .gallery-wrap li div a .gallery-title span {
     margin-top: 10px;
+  }
+  #section4 > div .gallery .u-logo {
+    padding: 10%;
+    background: rgb(58, 4, 35);
+    font-size: 40px;
+    display: block;
+    text-align: center;
   }
 }
 @media screen and (max-width: 750px) {
